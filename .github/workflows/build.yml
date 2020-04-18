@@ -1,8 +1,6 @@
-name: Yarn CI
+name: PR Yarn CI
 
 on:
-  push:
-    branches: [master]
   pull_request:
     branches: [master]
 

@@ -1,4 +1,4 @@
-name: Deploy Yarn CI
+name: CI
 
 on:
   push:
@@ -21,12 +21,12 @@ jobs:
       - name: Lint
         run: yarn eslint
       - name: Build
-        run: yarn Build
+        run: yarn build
         env:
           NODE_ENV: 'production'
       - name: Export
         run: |
-          yarn Export
+          yarn export
           touch out/.nojekyll
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

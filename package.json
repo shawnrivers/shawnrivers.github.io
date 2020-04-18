@@ -11,22 +11,21 @@
     "export": "next export",
     "typecheck": "tsc",
     "lint": "eslint '**/*.{ts,tsx}'",
-    "lint:fix": "eslint '**/*.{ts,tsx}' --fix",
-    "format-staged": "lint-staged --relative"
+    "lint:fix": "eslint '**/*.{ts,tsx}' --fix"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn lint:fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "emotion-theming": "^10.0.27",
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

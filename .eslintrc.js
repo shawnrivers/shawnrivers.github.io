@@ -18,8 +18,10 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/prefer-interface': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'no-console': 'error',
   },
   settings: {
     react: {

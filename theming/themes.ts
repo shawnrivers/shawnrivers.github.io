@@ -20,15 +20,23 @@ type ThemeColors = {
   };
 };
 
-type Typography = {
-  h1: number;
-  h2: number;
-  h3: number;
-  h4: number;
-  body1: number;
-  body2: number;
-  caption: number;
+type TypographyStyles = {
+  fontSize: string;
+  lineHeight: string;
+  fontWeight: 'bold' | 'normal';
 };
+
+type Typography = {
+  h1: TypographyStyles;
+  h2: TypographyStyles;
+  h3: TypographyStyles;
+  h4: TypographyStyles;
+  body1: TypographyStyles;
+  body2: TypographyStyles;
+  caption: TypographyStyles;
+};
+
+export type TypographyVariant = keyof Typography;
 
 export type ThemeKey = 'light' | 'dark';
 
@@ -44,13 +52,41 @@ type Theme = {
 };
 
 export const typography: Typography = {
-  h1: 48,
-  h2: 36,
-  h3: 24,
-  h4: 20,
-  body1: 16,
-  body2: 14,
-  caption: 12,
+  h1: {
+    fontSize: '48px',
+    lineHeight: '60px',
+    fontWeight: 'bold',
+  },
+  h2: {
+    fontSize: '36px',
+    lineHeight: '45px',
+    fontWeight: 'bold',
+  },
+  h3: {
+    fontSize: '24px',
+    lineHeight: '30px',
+    fontWeight: 'bold',
+  },
+  h4: {
+    fontSize: '20px',
+    lineHeight: '25px',
+    fontWeight: 'bold',
+  },
+  body1: {
+    fontSize: '16px',
+    lineHeight: '20px',
+    fontWeight: 'normal',
+  },
+  body2: {
+    fontSize: '14px',
+    lineHeight: '18px',
+    fontWeight: 'normal',
+  },
+  caption: {
+    fontSize: '12px',
+    lineHeight: '15px',
+    fontWeight: 'normal',
+  },
 };
 
 const {

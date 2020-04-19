@@ -25,25 +25,25 @@ const App = (props: AppProps) => {
       <Global
         styles={css`
           @font-face {
-            font-family: 'Source Code Pro';
-            font-weight: 500;
+            font-family: 'IBM Plex Mono';
+            font-weight: normal;
             font-style: normal;
-            src: url('${basePath}/fonts/SourceCodePro-Regular.ttf.woff2') format('woff2'),
-              url('${basePath}/fonts/SourceCodePro-Regular.ttf.woff') format('woff'),
-              url('${basePath}/fonts/SourceCodePro-Regular.ttf') format('truetype');
+            src: url('${basePath}/fonts/IBMPlexMono-Regular.woff2') format('woff2'),
+              url('${basePath}/fonts/IBMPlexMono-Regular.woff') format('woff'),
+              url('${basePath}/fonts/IBMPlexMono-Regular.ttf') format('truetype');
           }
 
           @font-face {
-            font-family: 'Source Code Pro';
-            font-weight: 700;
+            font-family: 'IBM Plex Mono';
+            font-weight: bold;
             font-style: normal;
-            src: url('${basePath}/fonts/SourceCodePro-Bold.ttf.woff2') format('woff2'),
-              url('${basePath}/fonts/SourceCodePro-Bold.ttf.woff') format('woff'),
-              url('${basePath}/fonts/SourceCodePro-Bold.ttf') format('truetype');
+            src: url('${basePath}/fonts/IBMPlexMono-Bold.woff2') format('woff2'),
+              url('${basePath}/fonts/IBMPlexMono-Bold.woff') format('woff'),
+              url('${basePath}/fonts/IBMPlexMono-Bold.ttf') format('truetype');
           }
 
           body {
-            font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+            font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
             color: ${themes.light.colors.global.grey0};
             margin: 0;
             padding: 0;

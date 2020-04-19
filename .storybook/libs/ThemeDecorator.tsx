@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'emotion-theming';
-import { themes } from '../../theming/themes';
 import * as React from 'react';
+import { themes } from '../../theming/themes';
 
 export const ThemeDecorator = () => {
   return Story => (

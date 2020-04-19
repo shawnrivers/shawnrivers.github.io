@@ -19,6 +19,31 @@ const App = (props: AppProps) => {
         styles={css`
           body {
             margin: 0;
+            padding: 0;
+            border: 0;
+          }
+
+          ul,
+          li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-indent: 0;
+          }
+
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+
+          button {
+            appearance: none;
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            font: inherit;
+            outline: initial;
+            padding: 0;
           }
         `}
       />

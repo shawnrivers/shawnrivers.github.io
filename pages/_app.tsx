@@ -1,11 +1,11 @@
 /**@jsx jsx */
-import { jsx, css, Global } from '@emotion/core';
+import { css, Global, jsx } from '@emotion/core';
+import { ThemeProvider } from 'emotion-theming';
 import { AppProps } from 'next/app';
 import * as React from 'react';
-import { ThemeProvider } from 'emotion-theming';
-import { ThemeKey, themes } from '../theming/themes';
 import { Layout } from '../components/atoms/Layout';
 import { Header } from '../components/molecules/Header';
+import { ThemeKey, themes } from '../theming/themes';
 
 const App = (props: AppProps) => {
   const [themeKey, setThemeKey] = React.useState<ThemeKey>('light');
@@ -19,7 +19,27 @@ const App = (props: AppProps) => {
     <ThemeProvider theme={theme}>
       <Global
         styles={css`
+          @font-face {
+            font-family: 'Source Code Pro';
+            font-weight: 500;
+            font-style: normal;
+            src: url('/fonts/SourceCodePro-Regular.ttf.woff2') format('woff2'),
+              url('/fonts/SourceCodePro-Regular.ttf.woff') format('woff'),
+              url('/fonts/SourceCodePro-Regular.ttf') format('truetype');
+          }
+
+          @font-face {
+            font-family: 'Source Code Pro';
+            font-weight: 700;
+            font-style: normal;
+            src: url('/fonts/SourceCodePro-Bold.ttf.woff2') format('woff2'),
+              url('/fonts/SourceCodePro-Bold.ttf.woff') format('woff'),
+              url('/fonts/SourceCodePro-Bold.ttf') format('truetype');
+          }
+
           body {
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+            color: ${themes.light.colors.global.grey0};
             margin: 0;
             padding: 0;
             border: 0;

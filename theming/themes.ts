@@ -20,6 +20,8 @@ type ThemeColors = {
   };
 };
 
+export type BackgroundColor = keyof ThemeColors['background'];
+
 type TypographyStyles = {
   fontSize: string;
   lineHeight: string;
@@ -40,6 +42,15 @@ export type TypographyVariant = keyof Typography;
 
 export type ThemeKey = 'light' | 'dark';
 
+type Spacing = {
+  xs: number;
+  s: number;
+  m: number;
+  l: number;
+  xl: number;
+  xxl: number;
+};
+
 type Theme = {
   colors: {
     theme: ThemeColors;
@@ -48,10 +59,11 @@ type Theme = {
     };
   };
   typography: Typography;
+  spacing: Spacing;
   key: ThemeKey;
 };
 
-export const typography: Typography = {
+const typography: Typography = {
   h1: {
     fontSize: '48px',
     lineHeight: '60px',
@@ -89,6 +101,15 @@ export const typography: Typography = {
   },
 };
 
+const spacing: Spacing = {
+  xs: 8,
+  s: 16,
+  m: 24,
+  l: 32,
+  xl: 40,
+  xxl: 56,
+};
+
 const {
   grey0,
   grey1,
@@ -101,7 +122,13 @@ const {
   red1,
 } = globalColors;
 
+const commonStyles: Pick<Theme, 'typography' | 'spacing'> = {
+  typography,
+  spacing,
+};
+
 const lightTheme: Theme = {
+  key: 'light',
   colors: {
     theme: {
       primary: {
@@ -123,11 +150,11 @@ const lightTheme: Theme = {
     },
     global: globalColors,
   },
-  typography,
-  key: 'light',
+  ...commonStyles,
 };
 
 const darkTheme: Theme = {
+  key: 'dark',
   colors: {
     theme: {
       primary: {
@@ -149,8 +176,7 @@ const darkTheme: Theme = {
     },
     global: globalColors,
   },
-  typography,
-  key: 'dark',
+  ...commonStyles,
 };
 
 export const themes = {

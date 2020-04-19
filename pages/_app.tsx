@@ -45,17 +45,18 @@ const App = (props: AppProps) => {
           body {
             font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
             color: ${themes.light.colors.global.grey0};
+          }
+
+          body, h1, h2, h3, h4, h5, h6, p, caption, a, div, section, article, main, header, footer, ul, li, ol {
+            font-size: 100%;
             margin: 0;
             padding: 0;
             border: 0;
           }
 
           ul,
-          li {
+          ol {
             list-style: none;
-            padding: 0;
-            margin: 0;
-            text-indent: 0;
           }
 
           a {
@@ -80,7 +81,7 @@ const App = (props: AppProps) => {
         `}
       >
         <Layout>
-          <Header onChangeTheme={handleSwitchTheme} />
+          <Header onClickSwitchTheme={handleSwitchTheme} />
         </Layout>
         <props.Component {...props.pageProps} />
       </div>

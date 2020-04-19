@@ -1,12 +1,12 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { useTheme } from '../../../theming/themes';
-import { DarkModeIcon } from '../../atoms/icons/DarkModeIcon';
-import { LightModeIcon } from '../../atoms/icons/LightModeIcon';
+import { Link } from '../../atoms/Link';
+import { ThemeSwitch } from '../../atoms/ThemeSwitch';
 
 type HeaderProps = {
-  onChangeTheme: () => void;
+  onClickSwitchTheme: () => void;
 };
 
 export const Header: React.FC<HeaderProps> = props => {
@@ -32,28 +32,29 @@ export const Header: React.FC<HeaderProps> = props => {
         `}
       >
         <li>
-          <a href="#bio">Bio</a>
+          <Link typography="body1" href="#bio">
+            Bio
+          </Link>
         </li>
         <li>
-          <a href="#works">Works</a>
+          <Link typography="body1" href="#works">
+            Works
+          </Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link typography="body1" href="#contact">
+            Contact
+          </Link>
         </li>
       </ul>
-      <button
-        onClick={props.onChangeTheme}
+      <ThemeSwitch
+        onClick={props.onClickSwitchTheme}
         css={css`
           right: 0;
+          top: -2px;
           position: absolute;
         `}
-      >
-        {theme.key === 'light' ? (
-          <DarkModeIcon fill={theme.colors.theme.primary.standard} />
-        ) : (
-          <LightModeIcon fill={theme.colors.theme.primary.standard} />
-        )}
-      </button>
+      ></ThemeSwitch>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { AppProps } from 'next/app';
 import * as React from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { ThemeKey, themes } from '../theming/themes';
+import { Layout } from '../components/atoms/Layout';
+import { Header } from '../components/molecules/Header';
 
 const App = (props: AppProps) => {
   const [themeKey, setThemeKey] = React.useState<ThemeKey>('light');
@@ -52,7 +54,9 @@ const App = (props: AppProps) => {
           background-color: ${theme.colors.theme.background.standard};
         `}
       >
-        <button onClick={handleSwitchTheme}>Change Theme</button>
+        <Layout>
+          <Header onChangeTheme={handleSwitchTheme} />
+        </Layout>
         <props.Component {...props.pageProps} />
       </div>
     </ThemeProvider>

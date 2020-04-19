@@ -5,7 +5,7 @@ import { TypographyVariant, useTheme } from '../../../theming/themes';
 
 type TypographyProps = React.HTMLAttributes<HTMLElement> & {
   variant: TypographyVariant;
-  component?: React.ElementType;
+  element?: React.ElementType;
 };
 
 const variantMapping: { [key in TypographyVariant]: React.ElementType } = {
@@ -19,15 +19,15 @@ const variantMapping: { [key in TypographyVariant]: React.ElementType } = {
 };
 
 export const Typography: React.FC<TypographyProps> = props => {
-  const { variant, component, children, ...restProps } = props;
+  const { variant, element, children, ...restProps } = props;
 
   const theme = useTheme();
 
-  const Component = component ?? variantMapping[variant];
+  const Element = element ?? variantMapping[variant];
 
   return (
-    <Component css={[theme.typography[variant]]} {...restProps}>
+    <Element css={[theme.typography[variant]]} {...restProps}>
       {children}
-    </Component>
+    </Element>
   );
 };

@@ -5,13 +5,13 @@ import { ThemeKey, themes } from '../theming/themes';
 
 const App = (props: AppProps) => {
   const [theme, setTheme] = React.useState<ThemeKey>('light');
-  const handleChangeTheme = React.useCallback(() => {
+  const handleSwitchTheme = React.useCallback(() => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   }, [theme]);
 
   return (
     <ThemeProvider theme={themes[theme]}>
-      <button onClick={handleChangeTheme}>Change Theme</button>
+      <button onClick={handleSwitchTheme}>Change Theme</button>
       <props.Component {...props.pageProps} />
     </ThemeProvider>
   );

@@ -6,6 +6,11 @@ import * as React from 'react';
 import { Layout } from '../components/atoms/Layout';
 import { Header } from '../components/molecules/Header';
 import { ThemeKey, themes } from '../theming/themes';
+import getConfig from 'next/config';
+
+const {
+  publicRuntimeConfig: { basePath },
+} = getConfig();
 
 const App = (props: AppProps) => {
   const [themeKey, setThemeKey] = React.useState<ThemeKey>('light');
@@ -23,18 +28,18 @@ const App = (props: AppProps) => {
             font-family: 'Source Code Pro';
             font-weight: 500;
             font-style: normal;
-            src: url('/fonts/SourceCodePro-Regular.ttf.woff2') format('woff2'),
-              url('/fonts/SourceCodePro-Regular.ttf.woff') format('woff'),
-              url('/fonts/SourceCodePro-Regular.ttf') format('truetype');
+            src: url('${basePath}/fonts/SourceCodePro-Regular.ttf.woff2') format('woff2'),
+              url('${basePath}/fonts/SourceCodePro-Regular.ttf.woff') format('woff'),
+              url('${basePath}/fonts/SourceCodePro-Regular.ttf') format('truetype');
           }
 
           @font-face {
             font-family: 'Source Code Pro';
             font-weight: 700;
             font-style: normal;
-            src: url('/fonts/SourceCodePro-Bold.ttf.woff2') format('woff2'),
-              url('/fonts/SourceCodePro-Bold.ttf.woff') format('woff'),
-              url('/fonts/SourceCodePro-Bold.ttf') format('truetype');
+            src: url('${basePath}/fonts/SourceCodePro-Bold.ttf.woff2') format('woff2'),
+              url('${basePath}/fonts/SourceCodePro-Bold.ttf.woff') format('woff'),
+              url('${basePath}/fonts/SourceCodePro-Bold.ttf') format('truetype');
           }
 
           body {

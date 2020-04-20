@@ -31,6 +31,7 @@
     "@emotion/core": "^10.0.28",
     "emotion-theming": "^10.0.27",
     "next": "^9.3.5",
+    "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-lazyload": "^2.6.7"

@@ -24,6 +24,7 @@ const IntroSection: React.FC<SectionProps> = ({ theme }) => (
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        margin-bottom: ${theme.spacing.l}px;
 
         @media (max-width: ${SP_EDGE}px) {
           flex-direction: column;
@@ -51,6 +52,7 @@ const IntroSection: React.FC<SectionProps> = ({ theme }) => (
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          text-align: center;
 
           @media (max-width: ${SP_EDGE}px) {
             align-items: center;
@@ -98,6 +100,31 @@ const IntroSection: React.FC<SectionProps> = ({ theme }) => (
             @yuxiao_he
           </Link>
         </div>
+      </div>
+    </div>
+    <div
+      css={css`
+        display: flex;
+        justify-content: center;
+      `}
+    >
+      <div
+        css={css`
+          padding: ${theme.spacing.m}px ${theme.spacing.l}px;
+          background-color: ${theme.colors.theme.background.variant0};
+          border-radius: 8px;
+          text-align: center;
+          display: inline-block;
+        `}
+      >
+        <Typography
+          variant="h4"
+          css={css`
+            color: ${theme.colors.theme.primary.standard};
+          `}
+        >
+          A Nogizaka46-driven web developer.
+        </Typography>
       </div>
     </div>
   </Layout>

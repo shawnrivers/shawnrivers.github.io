@@ -2,8 +2,7 @@
 import { jsx, css } from '@emotion/core';
 import * as React from 'react';
 import { BackgroundColor, useTheme } from '../../../theming/themes';
-
-const MAX_WIDTH = 1004;
+import { MAX_CONTENT, SP_SMALL } from '../../../libs/media';
 
 type LayoutProps = React.HTMLAttributes<HTMLElement> & {
   element?: React.ElementType;
@@ -28,9 +27,13 @@ export const Layout: React.FC<LayoutProps> = props => {
     >
       <div
         css={css`
-          max-width: ${MAX_WIDTH}px;
+          max-width: ${MAX_CONTENT}px;
           margin: auto;
           padding: ${theme.spacing.l}px;
+
+          @media (max-width: ${SP_SMALL}px) {
+            padding: ${theme.spacing.m}px;
+          }
         `}
       >
         {props.children}

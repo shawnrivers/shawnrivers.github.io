@@ -31,11 +31,15 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = props => {
       >
         <DarkModeIcon
           fill={theme.colors.theme.primary.standard}
+          title="Dark mode"
           css={css`
             margin: 0;
           `}
         />
-        <LightModeIcon fill={theme.colors.theme.primary.standard} />
+        <LightModeIcon
+          fill={theme.colors.theme.primary.standard}
+          title="Light mode"
+        />
       </div>
     </button>
   );

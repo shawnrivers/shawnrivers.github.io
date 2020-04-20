@@ -43,6 +43,7 @@ export type TypographyVariant = keyof Typography;
 export type ThemeKey = 'light' | 'dark';
 
 type Spacing = {
+  xxs: number;
   xs: number;
   s: number;
   m: number;
@@ -51,7 +52,7 @@ type Spacing = {
   xxl: number;
 };
 
-type Theme = {
+export type Theme = {
   colors: {
     theme: ThemeColors;
     global: {
@@ -102,6 +103,7 @@ const typography: Typography = {
 };
 
 const spacing: Spacing = {
+  xxs: 4,
   xs: 8,
   s: 16,
   m: 24,

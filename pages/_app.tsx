@@ -7,6 +7,7 @@ import { Layout } from '../components/atoms/Layout';
 import { Header } from '../components/molecules/Header';
 import { ThemeKey, themes } from '../theming/themes';
 import getConfig from 'next/config';
+import Head from 'next/head';
 
 const {
   publicRuntimeConfig: { basePath },
@@ -21,9 +22,15 @@ const App = (props: AppProps) => {
   const theme = themes[themeKey];
 
   return (
-    <ThemeProvider theme={theme}>
-      <Global
-        styles={css`
+    <>
+      <Head>
+        <title>Yuxiao He</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" type="image/png" href={`${basePath}/favicon.png`} />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <Global
+          styles={css`
           @font-face {
             font-family: 'IBM Plex Mono';
             font-weight: normal;
@@ -74,18 +81,19 @@ const App = (props: AppProps) => {
             padding: 0;
           }
         `}
-      />
-      <div
-        css={css`
-          background-color: ${theme.colors.theme.background.standard};
-        `}
-      >
-        <Layout>
-          <Header onClickSwitchTheme={handleSwitchTheme} />
-        </Layout>
-        <props.Component {...props.pageProps} />
-      </div>
-    </ThemeProvider>
+        />
+        <div
+          css={css`
+            background-color: ${theme.colors.theme.background.standard};
+          `}
+        >
+          <Layout>
+            <Header onClickSwitchTheme={handleSwitchTheme} />
+          </Layout>
+          <props.Component {...props.pageProps} />
+        </div>
+      </ThemeProvider>
+    </>
   );
 };
 

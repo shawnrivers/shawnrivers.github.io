@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { SvgIconProps } from './types';
+import { SvgIconComponent } from './types';
 
-export const ArrowIcon: React.FC<SvgIconProps> = props => {
+export const ArrowIcon: SvgIconComponent = props => {
   const { title, fill = 'currentColor', ...restProps } = props;
 
   return (

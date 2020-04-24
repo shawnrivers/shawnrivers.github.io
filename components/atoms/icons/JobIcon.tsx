@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { SvgIconProps } from './types';
 
-export const JobIcon: React.FC<SvgIconProps> = props => {
+export const JobIcon: SvgIconComponent = props => {
   const { title, fill = 'currentColor', ...restProps } = props;
 
   return (

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { SvgIconProps } from './types';
+import { SvgIconComponent } from './types';
 
-export const TwitterIcon: React.FC<SvgIconProps> = props => {
+export const TwitterIcon: SvgIconComponent = props => {
   const { title, fill = 'currentColor', ...restProps } = props;
 
   return (

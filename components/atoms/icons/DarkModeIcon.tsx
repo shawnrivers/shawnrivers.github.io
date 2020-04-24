@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { SvgIconProps } from './types';
+import { SvgIconComponent } from './types';
 
-export const DarkModeIcon: React.FC<SvgIconProps> = props => {
+export const DarkModeIcon: SvgIconComponent = props => {
   const { title, fill = 'currentColor', ...restProps } = props;
 
   return (

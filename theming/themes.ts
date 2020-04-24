@@ -102,7 +102,7 @@ const typography: Typography = {
   },
 };
 
-const spacing: Spacing = {
+export const spacing: Spacing = {
   xxs: 4,
   xs: 8,
   s: 16,

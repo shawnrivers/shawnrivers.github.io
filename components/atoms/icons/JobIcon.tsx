@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SvgIconProps } from './types';
+import { SvgIconComponent } from './types';
 
 export const JobIcon: SvgIconComponent = props => {
   const { title, fill = 'currentColor', ...restProps } = props;

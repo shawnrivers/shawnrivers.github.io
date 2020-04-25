@@ -7,7 +7,11 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
+  plugins: ["import"],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -23,6 +27,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-console': 'error',
+    'import/order': 'error',
   },
   settings: {
     react: {

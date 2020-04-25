@@ -2,12 +2,12 @@
 import { css, Global, jsx } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import { AppProps } from 'next/app';
+import getConfig from 'next/config';
+import Head from 'next/head';
 import * as React from 'react';
 import { Layout } from '../components/atoms/Layout';
 import { Header } from '../components/molecules/Header';
 import { ThemeKey, themes } from '../theming/themes';
-import getConfig from 'next/config';
-import Head from 'next/head';
 
 const {
   publicRuntimeConfig: { basePath },

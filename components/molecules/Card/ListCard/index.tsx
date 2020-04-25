@@ -1,10 +1,10 @@
 /**@jsx jsx */
-import { jsx, css, SerializedStyles } from '@emotion/core';
+import { css, jsx, SerializedStyles } from '@emotion/core';
 import * as React from 'react';
-import { useTheme } from '../../../../theming/themes';
-import { Typography } from '../../../atoms/Typography';
-import { SvgIconComponent } from '../../../atoms/icons/types';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
+import { useTheme } from '../../../../theming/themes';
+import { SvgIconComponent } from '../../../atoms/icons/types';
+import { Typography } from '../../../atoms/Typography';
 
 const roundDotSize = 12;
 const roundDotBorderWidth = 4;

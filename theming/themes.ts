@@ -1,5 +1,5 @@
-import { GlobalColor, globalColors } from './colors';
 import { useTheme as emotionUseTheme } from 'emotion-theming';
+import { GlobalColor, globalColors } from './colors';
 
 type ThemeColors = {
   primary: {

@@ -1,16 +1,16 @@
 /**@jsx jsx */
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
+import * as BioData from '../../../data/bio';
 import { useTheme } from '../../../theming/themes';
+import { EducationIcon } from '../../atoms/icons/EducationIcon';
 import { InterestIcon } from '../../atoms/icons/InterestIcon';
+import { JobIcon } from '../../atoms/icons/JobIcon';
+import { LocationIcon } from '../../atoms/icons/LocationIcon';
 import { Layout } from '../../atoms/Layout';
 import { Typography } from '../../atoms/Typography';
 import { ArticleCard } from '../../molecules/Card/ArticleCard';
 import { ListCard } from '../../molecules/Card/ListCard';
-import { LocationIcon } from '../../atoms/icons/LocationIcon';
-import { EducationIcon } from '../../atoms/icons/EducationIcon';
-import { JobIcon } from '../../atoms/icons/JobIcon';
-import * as BioData from '../../../data/bio';
 
 export const BioSection: React.FC = () => {
   const theme = useTheme();

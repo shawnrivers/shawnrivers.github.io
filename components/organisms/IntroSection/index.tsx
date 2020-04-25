@@ -1,6 +1,7 @@
 /**@jsx jsx */
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
+import * as IntroData from '../../../data/intro';
 import { SP_EDGE } from '../../../libs/media';
 import { useTheme } from '../../../theming/themes';
 import { CircleImage } from '../../atoms/CircleImage';
@@ -11,7 +12,6 @@ import { Typography } from '../../atoms/Typography';
 import profile1x from '../../images/profile-1x.jpg';
 import profile2x from '../../images/profile-2x.jpg';
 import profile3x from '../../images/profile-3x.jpg';
-import * as IntroData from '../../../data/intro';
 
 export const IntroSection: React.FC = () => {
   const theme = useTheme();

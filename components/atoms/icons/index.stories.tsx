@@ -1,17 +1,17 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { number, select, withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { withKnobs, number, select } from '@storybook/addon-knobs';
-import { themes } from '../../../theming/themes';
-import { LightModeIcon } from './LightModeIcon';
-import { DarkModeIcon } from './DarkModeIcon';
-import { Typography } from '../Typography';
 import { ThemeDecorator } from '../../../.storybook/libs/ThemeDecorator';
-import { LocationIcon } from './LocationIcon';
+import { themes } from '../../../theming/themes';
+import { Typography } from '../Typography';
+import { ArrowIcon } from './ArrowIcon';
+import { DarkModeIcon } from './DarkModeIcon';
 import { EducationIcon } from './EducationIcon';
 import { InterestIcon } from './InterestIcon';
 import { JobIcon } from './JobIcon';
-import { ArrowIcon } from './ArrowIcon';
+import { LightModeIcon } from './LightModeIcon';
+import { LocationIcon } from './LocationIcon';
 import { TwitterIcon } from './TwitterIcon';
 
 export default {

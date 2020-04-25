@@ -1,9 +1,9 @@
 /**@jsx jsx */
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { useTheme } from '../../../theming/themes';
 import { Link } from '../../atoms/Link';
 import { ThemeSwitch } from '../../atoms/ThemeSwitch';
+import { useTheme } from '../../../theming/themes';
 
 type HeaderProps = {
   onClickSwitchTheme: () => void;

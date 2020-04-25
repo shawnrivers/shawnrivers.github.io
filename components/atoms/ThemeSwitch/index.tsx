@@ -1,9 +1,9 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { LightModeIcon } from '../icons/LightModeIcon';
-import { DarkModeIcon } from '../icons/DarkModeIcon';
 import { useTheme } from '../../../theming/themes';
+import { DarkModeIcon } from '../icons/DarkModeIcon';
+import { LightModeIcon } from '../icons/LightModeIcon';
 
 type ThemeSwitchProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   onClick: () => void;

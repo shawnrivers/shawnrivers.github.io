@@ -1,8 +1,8 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { BackgroundColor, useTheme } from '../../../theming/themes';
 import { MAX_CONTENT, SP_SMALL } from '../../../libs/media';
+import { BackgroundColor, useTheme } from '../../../theming/themes';
 
 type LayoutProps = React.HTMLAttributes<HTMLElement> & {
   element?: React.ElementType;

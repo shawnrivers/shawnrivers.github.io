@@ -1,10 +1,10 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { radios, withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { Typography } from '.';
 import { ThemeDecorator } from '../../../.storybook/libs/ThemeDecorator';
 import { themes } from '../../../theming/themes';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { Typography } from '.';
 
 export default {
   title: 'Typography',

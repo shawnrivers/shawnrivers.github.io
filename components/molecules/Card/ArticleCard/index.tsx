@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core';
 import * as React from 'react';
-import { CARD_WIDTH } from '../../../../libs/media';
+import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
 import { useTheme } from '../../../../theming/themes';
 import { SvgIconComponent } from '../../../atoms/icons/types';
 import { Typography } from '../../../atoms/Typography';
@@ -35,7 +35,8 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           flex-direction: column;
           align-items: center;
           margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
-          max-width: ${CARD_WIDTH}px;
+          max-width: ${CARD_MAX_WIDTH}px;
+          min-width: ${CARD_MIN_WIDTH}px;
           border-radius: 8px;
           height: 100%;
         `,

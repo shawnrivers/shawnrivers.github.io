@@ -11,6 +11,7 @@ import { Typography } from '../../atoms/Typography';
 import profile1x from '../../images/profile-1x.jpg';
 import profile2x from '../../images/profile-2x.jpg';
 import profile3x from '../../images/profile-3x.jpg';
+import * as IntroData from '../../../data/intro';
 
 export const IntroSection: React.FC = () => {
   const theme = useTheme();
@@ -123,7 +124,7 @@ export const IntroSection: React.FC = () => {
               color: ${theme.colors.theme.primary.standard};
             `}
           >
-            A Nogizaka46-driven web developer.
+            {IntroData.intro}
           </Typography>
         </div>
       </div>

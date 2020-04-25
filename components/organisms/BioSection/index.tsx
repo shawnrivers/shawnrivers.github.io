@@ -10,6 +10,7 @@ import { ListCard } from '../../molecules/Card/ListCard';
 import { LocationIcon } from '../../atoms/icons/LocationIcon';
 import { EducationIcon } from '../../atoms/icons/EducationIcon';
 import { JobIcon } from '../../atoms/icons/JobIcon';
+import * as BioData from '../../../data/bio';
 
 export const BioSection: React.FC = () => {
   const theme = useTheme();
@@ -42,202 +43,30 @@ export const BioSection: React.FC = () => {
         >
           <ListCard
             headingIcon={LocationIcon}
-            heading="LOCATIONS"
+            heading="Locations"
             margin={theme.spacing.s}
             customCSS={css`
               flex: 1;
             `}
-            listItems={[
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    Fuzhou, China
-                  </Typography>
-                ),
-              },
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    Shenyang, China
-                  </Typography>
-                ),
-              },
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    Nogoya, Japan
-                  </Typography>
-                ),
-              },
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    Tokyo, Japan
-                  </Typography>
-                ),
-                isActive: true,
-              },
-            ]}
+            listItems={BioData.locations}
           />
           <ListCard
             headingIcon={EducationIcon}
-            heading="EDUCATION"
+            heading="Education"
             margin={theme.spacing.s}
             customCSS={css`
               flex: 1;
             `}
-            listItems={[
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    Northeastern University{' '}
-                    <span
-                      css={css`
-                        color: ${theme.colors.theme.primary.variant2};
-                      `}
-                    >
-                      (China)
-                    </span>
-                    , <br />
-                    Digital Media
-                  </Typography>
-                ),
-              },
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    Nagoya University{' '}
-                    <span
-                      css={css`
-                        color: ${theme.colors.theme.primary.variant2};
-                      `}
-                    >
-                      (Japan)
-                    </span>
-                    , <br />
-                    Society and Media Studies
-                  </Typography>
-                ),
-              },
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    University of Tokyo{' '}
-                    <span
-                      css={css`
-                        color: ${theme.colors.theme.primary.variant2};
-                      `}
-                    >
-                      (Japan)
-                    </span>
-                    , <br />
-                    Computer Graphics
-                  </Typography>
-                ),
-              },
-            ]}
+            listItems={BioData.education}
           />
           <ListCard
             headingIcon={JobIcon}
-            heading="JOBS"
+            heading="Jobs"
             margin={theme.spacing.s}
             customCSS={css`
               flex: 1;
             `}
-            listItems={[
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    eureka, Inc.{' '}
-                    <span
-                      css={css`
-                        color: ${theme.colors.theme.primary.variant2};
-                      `}
-                    >
-                      (intern)
-                    </span>
-                    <br />
-                    Web Front-end Engineer
-                  </Typography>
-                ),
-              },
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                      overflow-wrap: break-word;
-                    `}
-                  >
-                    SHOWROOM Inc.{' '}
-                    <span
-                      css={css`
-                        color: ${theme.colors.theme.primary.variant2};
-                      `}
-                    >
-                      (intern)
-                    </span>
-                    <br />
-                    Web Front-end Engineer
-                  </Typography>
-                ),
-              },
-              {
-                component: (
-                  <Typography
-                    variant="body2"
-                    customCSS={css`
-                      color: ${theme.colors.theme.primary.standard};
-                    `}
-                  >
-                    eureka, Inc.
-                    <br />
-                    Web Front-end Engineer
-                  </Typography>
-                ),
-              },
-            ]}
+            listItems={BioData.jobs}
           />
           <ArticleCard
             headingIcon={InterestIcon}
@@ -245,8 +74,8 @@ export const BioSection: React.FC = () => {
             customCSS={css`
               flex: 1;
             `}
-            heading="HOBBIES"
-            body="Nogizaka46, web dev, UI design, covering, Karaoke"
+            heading="Hobbies"
+            body={BioData.hobbies}
           />
         </div>
       </div>

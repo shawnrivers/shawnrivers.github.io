@@ -51,7 +51,8 @@ const App = (props: AppProps) => {
 
           body {
             font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
-            color: ${themes.light.colors.global.grey0};
+            color: ${theme.colors.theme.primary.standard};
+            background-color: ${theme.colors.theme.background.standard};
           }
 
           body, h1, h2, h3, h4, h5, h6, p, caption, a, div, section, article, main, header, footer, ul, li, ol {

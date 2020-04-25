@@ -47,11 +47,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         fill={theme.colors.theme.primary.standard}
         width={48}
         height={48}
+        title={heading}
         css={css`
           margin: -${headingIconYOffset}px 0 ${theme.spacing.xxs}px;
         `}
       />
-      <div
+      <article
         css={css`
           display: flex;
           flex-direction: column;
@@ -64,6 +65,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           customCSS={css`
             color: ${theme.colors.theme.primary.standard};
             margin-bottom: ${theme.spacing.s}px;
+            text-transform: uppercase;
           `}
         >
           {heading}
@@ -76,7 +78,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         >
           {body}
         </Typography>
-      </div>
+      </article>
     </div>
   );
 };

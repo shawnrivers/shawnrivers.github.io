@@ -39,7 +39,7 @@ const RoundDot: React.FC<{
   );
 };
 
-type ListCardProps = {
+export type ListCardProps = {
   headingIcon: SvgIconComponent;
   heading: string;
   listItems: { component: React.ReactNode; isActive?: boolean }[];
@@ -80,11 +80,12 @@ export const ListCard: React.FC<ListCardProps> = ({
         fill={theme.colors.theme.primary.standard}
         width={48}
         height={48}
+        title={heading}
         css={css`
           margin: -${headingIconYOffset}px 0 ${theme.spacing.xxs}px;
         `}
       />
-      <div
+      <article
         css={css`
           display: flex;
           flex-direction: column;
@@ -97,6 +98,7 @@ export const ListCard: React.FC<ListCardProps> = ({
           customCSS={css`
             color: ${theme.colors.theme.primary.standard};
             margin-bottom: ${theme.spacing.s}px;
+            text-transform: uppercase;
           `}
         >
           {heading}
@@ -124,12 +126,19 @@ export const ListCard: React.FC<ListCardProps> = ({
                   padding-left: ${theme.spacing.m}px;
                 `}
               >
-                {item.component}
+                <Typography
+                  variant="body2"
+                  customCSS={css`
+                    color: ${theme.colors.theme.primary.standard};
+                  `}
+                >
+                  {item.component}
+                </Typography>
               </div>
             </li>
           ))}
         </ul>
-      </div>
+      </article>
     </div>
   );
 };

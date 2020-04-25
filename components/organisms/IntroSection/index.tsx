@@ -105,6 +105,7 @@ export const IntroSection: React.FC = () => {
         css={css`
           display: flex;
           justify-content: center;
+          margin: ${theme.spacing.s}px;
         `}
       >
         <div

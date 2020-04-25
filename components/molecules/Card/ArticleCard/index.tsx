@@ -1,5 +1,5 @@
 /**@jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { css, jsx, SerializedStyles } from '@emotion/core';
 import * as React from 'react';
 import { CARD_WIDTH } from '../../../../libs/media';
 import { useTheme } from '../../../../theming/themes';
@@ -10,25 +10,37 @@ type ArticleCardProps = {
   headingIcon: SvgIconComponent;
   heading: string;
   body: string;
+  margin?: number;
+  customCSS?: SerializedStyles;
 };
 
-export const ArticleCard: React.FC<ArticleCardProps> = props => {
+export const ArticleCard: React.FC<ArticleCardProps> = ({
+  headingIcon,
+  heading,
+  body,
+  margin = 0,
+  customCSS,
+}) => {
   const theme = useTheme();
 
   const headingIconYOffset = theme.spacing.m;
-  const HeadingIcon = props.headingIcon;
+  const HeadingIcon = headingIcon;
 
   return (
     <div
-      css={css`
-        background-color: ${theme.colors.theme.background.standard};
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: ${headingIconYOffset}px;
-        max-width: ${CARD_WIDTH}px;
-        border-radius: 8px;
-      `}
+      css={[
+        css`
+          background-color: ${theme.colors.theme.background.standard};
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
+          max-width: ${CARD_WIDTH}px;
+          border-radius: 8px;
+          height: 100%;
+        `,
+        customCSS,
+      ]}
     >
       <HeadingIcon
         fill={theme.colors.theme.primary.standard}
@@ -48,20 +60,20 @@ export const ArticleCard: React.FC<ArticleCardProps> = props => {
       >
         <Typography
           variant="h4"
-          css={css`
+          customCSS={css`
             color: ${theme.colors.theme.primary.standard};
             margin-bottom: ${theme.spacing.s}px;
           `}
         >
-          {props.heading}
+          {heading}
         </Typography>
         <Typography
           variant="body2"
-          css={css`
+          customCSS={css`
             color: ${theme.colors.theme.primary.standard};
           `}
         >
-          {props.body}
+          {body}
         </Typography>
       </div>
     </div>

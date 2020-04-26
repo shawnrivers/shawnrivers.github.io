@@ -45,6 +45,8 @@ export const BioSection: React.FC = () => {
             headingIcon={LocationIcon}
             heading="Locations"
             margin={theme.spacing.s}
+            color="standard"
+            backgroundColor="standard"
             customCSS={css`
               flex: 1;
             `}
@@ -54,6 +56,8 @@ export const BioSection: React.FC = () => {
             headingIcon={EducationIcon}
             heading="Education"
             margin={theme.spacing.s}
+            color="standard"
+            backgroundColor="standard"
             customCSS={css`
               flex: 1;
             `}
@@ -63,6 +67,8 @@ export const BioSection: React.FC = () => {
             headingIcon={JobIcon}
             heading="Jobs"
             margin={theme.spacing.s}
+            color="standard"
+            backgroundColor="standard"
             customCSS={css`
               flex: 1;
             `}
@@ -71,6 +77,8 @@ export const BioSection: React.FC = () => {
           <ArticleCard
             headingIcon={InterestIcon}
             margin={theme.spacing.s}
+            color="standard"
+            backgroundColor="standard"
             customCSS={css`
               flex: 1;
             `}

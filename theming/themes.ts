@@ -1,7 +1,7 @@
 import { useTheme as emotionUseTheme } from 'emotion-theming';
 import { GlobalColor, globalColors } from './colors';
 
-type ThemeColors = {
+export type ThemeColors = {
   primary: {
     standard: string;
     variant0: string;

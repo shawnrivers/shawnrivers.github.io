@@ -2,10 +2,12 @@
 import { css, jsx, SerializedStyles } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { useTheme } from '../../../../theming/themes';
+import { useTheme, ThemeColors } from '../../../../theming/themes';
 import { SvgIconComponent } from '../../../atoms/icons/types';
 import { Typography } from '../../../atoms/Typography';
 
+const iconSize = 48;
+const headingIconYOffset = iconSize / 2;
 const roundDotSize = 12;
 const roundDotBorderWidth = 4;
 const roundDotFullSize = roundDotSize + roundDotBorderWidth;
@@ -43,6 +45,8 @@ export type ListCardProps = {
   headingIcon: SvgIconComponent;
   heading: string;
   listItems: { component: React.ReactNode; isActive?: boolean }[];
+  color?: keyof ThemeColors['primary'];
+  backgroundColor?: keyof ThemeColors['background'];
   margin?: number;
   customCSS?: SerializedStyles;
 };
@@ -51,19 +55,20 @@ export const ListCard: React.FC<ListCardProps> = ({
   headingIcon,
   heading,
   listItems,
+  color = 'standard',
+  backgroundColor = 'standard',
   margin = 0,
   customCSS,
 }) => {
   const theme = useTheme();
 
-  const headingIconYOffset = theme.spacing.m;
   const HeadingIcon = headingIcon;
 
   return (
     <div
       css={[
         css`
-          background-color: ${theme.colors.theme.background.standard};
+          background-color: ${theme.colors.theme.background[backgroundColor]};
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -77,9 +82,9 @@ export const ListCard: React.FC<ListCardProps> = ({
       ]}
     >
       <HeadingIcon
-        fill={theme.colors.theme.primary.standard}
-        width={48}
-        height={48}
+        fill={theme.colors.theme.primary[color]}
+        width={iconSize}
+        height={iconSize}
         title={heading}
         css={css`
           margin: -${headingIconYOffset}px 0 ${theme.spacing.xxs}px;
@@ -96,7 +101,7 @@ export const ListCard: React.FC<ListCardProps> = ({
         <Typography
           variant="h4"
           customCSS={css`
-            color: ${theme.colors.theme.primary.standard};
+            color: ${theme.colors.theme.primary[color]};
             margin-bottom: ${theme.spacing.s}px;
             text-transform: uppercase;
           `}
@@ -129,7 +134,7 @@ export const ListCard: React.FC<ListCardProps> = ({
                 <Typography
                   variant="body2"
                   customCSS={css`
-                    color: ${theme.colors.theme.primary.standard};
+                    color: ${theme.colors.theme.primary[color]};
                   `}
                 >
                   {item.component}

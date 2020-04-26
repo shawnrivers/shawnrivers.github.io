@@ -43,17 +43,12 @@ export const ContactSection: React.FC<React.HTMLAttributes<
           `}
         >
           {contactsData.map(contactData => (
-            <li
-              key={contactData.name}
-              css={css`
-                margin: 0 ${theme.spacing.s}px;
-              `}
-            >
+            <li key={contactData.name}>
               <a
                 href={contactData.url}
                 css={css`
                   display: block;
-                  padding: ${theme.spacing.xxs}px 0;
+                  padding: 20px ${theme.spacing.m}px;
                 `}
               >
                 <Typography variant="body2" color="standard">

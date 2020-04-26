@@ -25,12 +25,13 @@ export const IntroSection: React.FC<React.HTMLAttributes<
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          margin-bottom: ${theme.spacing.l}px;
+          margin-bottom: ${theme.spacing.m}px;
 
           @media (max-width: ${SP_EDGE}px) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin-bottom: 0;
           }
         `}
       >
@@ -57,6 +58,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             flex-direction: column;
             align-items: flex-start;
             text-align: center;
+            padding-top: ${theme.spacing.xs}px;
 
             @media (max-width: ${SP_EDGE}px) {
               align-items: center;
@@ -72,16 +74,15 @@ export const IntroSection: React.FC<React.HTMLAttributes<
           >
             Yuxiao He
           </Typography>
-          <Typography
-            variant="h4"
-            color="variant2"
-            css={css`
-              margin-bottom: ${theme.spacing.xs}px;
-            `}
-          >
+          <Typography variant="h4" color="variant2">
             Usho Ka (JA)
           </Typography>
-          <a href="https://twitter.com/yuxiao_he">
+          <a
+            href="https://twitter.com/yuxiao_he"
+            css={css`
+              padding: ${theme.spacing.s}px 0;
+            `}
+          >
             <div
               css={css`
                 display: flex;

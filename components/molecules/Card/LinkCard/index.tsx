@@ -1,12 +1,12 @@
 /**@jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { useTheme, ThemeColors } from '../../../../theming/themes';
-import { Typography } from '../../../atoms/Typography';
+import { ThemeColors, useTheme } from '../../../../theming/themes';
+import { CircleIcon } from '../../../atoms/CircleIcon';
 import { CircleImage } from '../../../atoms/CircleImage';
 import { ArrowIcon } from '../../../atoms/icons/ArrowIcon';
-import { CircleIcon } from '../../../atoms/CircleIcon';
+import { Typography } from '../../../atoms/Typography';
 
 const iconSize = 128;
 const headingIconYOffset = iconSize / 2;
@@ -24,7 +24,6 @@ export type LinkCardProps = {
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
   margin?: number;
-  customCSS?: SerializedStyles;
 };
 
 export const LinkCard: React.FC<LinkCardProps> = ({
@@ -36,28 +35,26 @@ export const LinkCard: React.FC<LinkCardProps> = ({
   color = 'standard',
   backgroundColor = 'standard',
   margin = 0,
-  customCSS,
+  ...restProps
 }) => {
   const theme = useTheme();
 
   return (
     <a href={to}>
       <div
-        css={[
-          css`
-            background-color: ${theme.colors.theme.background[backgroundColor]};
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
-            max-width: ${CARD_MAX_WIDTH}px;
-            min-width: ${CARD_MIN_WIDTH}px;
-            border-radius: 8px;
-            height: auto;
-          `,
-          customCSS,
-        ]}
+        css={css`
+          background-color: ${theme.colors.theme.background[backgroundColor]};
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
+          max-width: ${CARD_MAX_WIDTH}px;
+          min-width: ${CARD_MIN_WIDTH}px;
+          border-radius: 8px;
+          height: auto;
+        `}
+        {...restProps}
       >
         <div
           css={css`
@@ -97,7 +94,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
         >
           <Typography
             variant="h4"
-            customCSS={css`
+            css={css`
               color: ${theme.colors.theme.primary[color]};
               margin-bottom: ${theme.spacing.s}px;
               text-transform: uppercase;
@@ -107,7 +104,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
           </Typography>
           <Typography
             variant="body2"
-            customCSS={css`
+            css={css`
               color: ${theme.colors.theme.primary[color]};
             `}
           >

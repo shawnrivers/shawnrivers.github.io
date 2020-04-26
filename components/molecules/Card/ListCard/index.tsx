@@ -1,8 +1,8 @@
 /**@jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { useTheme, ThemeColors } from '../../../../theming/themes';
+import { ThemeColors, useTheme } from '../../../../theming/themes';
 import { SvgIconComponent } from '../../../atoms/icons/types';
 import { Typography } from '../../../atoms/Typography';
 
@@ -15,28 +15,25 @@ const listLineWidth = 2;
 
 const RoundDot: React.FC<{
   isActive?: boolean;
-  customCSS?: SerializedStyles;
-}> = props => {
+}> = ({ isActive, ...restProps }) => {
   const theme = useTheme();
 
   return (
     <div
-      css={[
-        css`
-          width: ${roundDotSize}px;
-          height: ${roundDotSize}px;
-          border: ${roundDotBorderWidth}px solid
-            ${theme.colors.theme.background.standard};
-          top: ${roundDotSize / 2 - 7}px;
-          left: -${(roundDotFullSize + listLineWidth) / 2}px;
-          border-radius: 50%;
-          position: absolute;
-          background-color: ${props.isActive
-            ? theme.colors.global.red0
-            : theme.colors.global.grey2};
-        `,
-        props.customCSS,
-      ]}
+      css={css`
+        width: ${roundDotSize}px;
+        height: ${roundDotSize}px;
+        border: ${roundDotBorderWidth}px solid
+          ${theme.colors.theme.background.standard};
+        top: ${roundDotSize / 2 - 7}px;
+        left: -${(roundDotFullSize + listLineWidth) / 2}px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: ${isActive
+          ? theme.colors.global.red0
+          : theme.colors.global.grey2};
+      `}
+      {...restProps}
     ></div>
   );
 };
@@ -48,7 +45,6 @@ export type ListCardProps = {
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
   margin?: number;
-  customCSS?: SerializedStyles;
 };
 
 export const ListCard: React.FC<ListCardProps> = ({
@@ -58,7 +54,7 @@ export const ListCard: React.FC<ListCardProps> = ({
   color = 'standard',
   backgroundColor = 'standard',
   margin = 0,
-  customCSS,
+  ...restProps
 }) => {
   const theme = useTheme();
 
@@ -66,20 +62,18 @@ export const ListCard: React.FC<ListCardProps> = ({
 
   return (
     <div
-      css={[
-        css`
-          background-color: ${theme.colors.theme.background[backgroundColor]};
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
-          max-width: ${CARD_MAX_WIDTH}px;
-          min-width: ${CARD_MIN_WIDTH}px;
-          border-radius: 8px;
-          height: 100%;
-        `,
-        customCSS,
-      ]}
+      css={css`
+        background-color: ${theme.colors.theme.background[backgroundColor]};
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
+        max-width: ${CARD_MAX_WIDTH}px;
+        min-width: ${CARD_MIN_WIDTH}px;
+        border-radius: 8px;
+        height: 100%;
+      `}
+      {...restProps}
     >
       <HeadingIcon
         fill={theme.colors.theme.primary[color]}
@@ -100,7 +94,7 @@ export const ListCard: React.FC<ListCardProps> = ({
       >
         <Typography
           variant="h4"
-          customCSS={css`
+          css={css`
             color: ${theme.colors.theme.primary[color]};
             margin-bottom: ${theme.spacing.s}px;
             text-transform: uppercase;
@@ -133,7 +127,7 @@ export const ListCard: React.FC<ListCardProps> = ({
               >
                 <Typography
                   variant="body2"
-                  customCSS={css`
+                  css={css`
                     color: ${theme.colors.theme.primary[color]};
                   `}
                 >

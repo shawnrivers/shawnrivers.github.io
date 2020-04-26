@@ -55,7 +55,7 @@ export const WorksSection: React.FC = () => {
               color="standard"
               backgroundColor="variant0"
               margin={theme.spacing.s}
-              customCSS={css`
+              css={css`
                 flex: 1;
               `}
             />

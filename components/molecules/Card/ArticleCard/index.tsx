@@ -1,8 +1,8 @@
 /**@jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { useTheme, ThemeColors } from '../../../../theming/themes';
+import { ThemeColors, useTheme } from '../../../../theming/themes';
 import { SvgIconComponent } from '../../../atoms/icons/types';
 import { Typography } from '../../../atoms/Typography';
 
@@ -16,7 +16,6 @@ type ArticleCardProps = {
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
   margin?: number;
-  customCSS?: SerializedStyles;
 };
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({
@@ -26,7 +25,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   color = 'standard',
   backgroundColor = 'standard',
   margin = 0,
-  customCSS,
+  ...restProps
 }) => {
   const theme = useTheme();
 
@@ -34,20 +33,18 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
   return (
     <div
-      css={[
-        css`
-          background-color: ${theme.colors.theme.background[backgroundColor]};
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
-          max-width: ${CARD_MAX_WIDTH}px;
-          min-width: ${CARD_MIN_WIDTH}px;
-          border-radius: 8px;
-          height: 100%;
-        `,
-        customCSS,
-      ]}
+      css={css`
+        background-color: ${theme.colors.theme.background[backgroundColor]};
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
+        max-width: ${CARD_MAX_WIDTH}px;
+        min-width: ${CARD_MIN_WIDTH}px;
+        border-radius: 8px;
+        height: 100%;
+      `}
+      {...restProps}
     >
       <HeadingIcon
         fill={theme.colors.theme.primary[color]}
@@ -68,7 +65,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       >
         <Typography
           variant="h4"
-          customCSS={css`
+          css={css`
             color: ${theme.colors.theme.primary[color]};
             margin-bottom: ${theme.spacing.s}px;
             text-transform: uppercase;
@@ -78,7 +75,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         </Typography>
         <Typography
           variant="body2"
-          customCSS={css`
+          css={css`
             color: ${theme.colors.theme.primary[color]};
           `}
         >

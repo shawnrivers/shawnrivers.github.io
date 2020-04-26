@@ -47,10 +47,10 @@ export const BioSection: React.FC = () => {
             margin={theme.spacing.s}
             color="standard"
             backgroundColor="standard"
-            customCSS={css`
+            listItems={BioData.locations}
+            css={css`
               flex: 1;
             `}
-            listItems={BioData.locations}
           />
           <ListCard
             headingIcon={EducationIcon}
@@ -58,10 +58,10 @@ export const BioSection: React.FC = () => {
             margin={theme.spacing.s}
             color="standard"
             backgroundColor="standard"
-            customCSS={css`
+            listItems={BioData.education}
+            css={css`
               flex: 1;
             `}
-            listItems={BioData.education}
           />
           <ListCard
             headingIcon={JobIcon}
@@ -69,21 +69,21 @@ export const BioSection: React.FC = () => {
             margin={theme.spacing.s}
             color="standard"
             backgroundColor="standard"
-            customCSS={css`
+            listItems={BioData.jobs}
+            css={css`
               flex: 1;
             `}
-            listItems={BioData.jobs}
           />
           <ArticleCard
             headingIcon={InterestIcon}
             margin={theme.spacing.s}
             color="standard"
             backgroundColor="standard"
-            customCSS={css`
-              flex: 1;
-            `}
             heading="Hobbies"
             body={BioData.hobbies}
+            css={css`
+              flex: 1;
+            `}
           />
         </div>
       </div>

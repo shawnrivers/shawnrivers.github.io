@@ -64,7 +64,7 @@ export const IntroSection: React.FC = () => {
         >
           <Typography
             variant="h2"
-            customCSS={css`
+            css={css`
               color: ${theme.colors.theme.primary.standard};
               margin-bottom: ${theme.spacing.xs}px;
             `}
@@ -73,7 +73,7 @@ export const IntroSection: React.FC = () => {
           </Typography>
           <Typography
             variant="h4"
-            customCSS={css`
+            css={css`
               color: ${theme.colors.theme.primary.variant2};
               margin-bottom: ${theme.spacing.xs}px;
             `}
@@ -123,7 +123,7 @@ export const IntroSection: React.FC = () => {
         >
           <Typography
             variant="h4"
-            customCSS={css`
+            css={css`
               color: ${theme.colors.theme.primary.standard};
             `}
           >

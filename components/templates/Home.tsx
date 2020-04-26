@@ -4,6 +4,7 @@ import * as React from 'react';
 import { BioSection } from '../organisms/BioSection';
 import { IntroSection } from '../organisms/IntroSection';
 import { WorksSection } from '../organisms/WorksSection';
+import { ContactSection } from '../organisms/ContactSection';
 
 export const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ export const Home: React.FC = () => {
       <IntroSection />
       <BioSection />
       <WorksSection />
+      <ContactSection />
     </React.Fragment>
   );
 };

@@ -37,7 +37,10 @@ export const IntroSection: React.FC = () => {
           src={profile1x}
           srcSet={`${profile1x} 1x, ${profile2x} 2x, ${profile3x} 3x`}
           alt="Yuxiao He"
+          width={128}
           css={css`
+            background-color: ${theme.colors.global.white};
+            border: 4px solid ${theme.colors.theme.primary.standard};
             margin-bottom: 0;
             margin-right: ${theme.spacing.l}px;
 

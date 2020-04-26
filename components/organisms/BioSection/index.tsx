@@ -1,12 +1,8 @@
 /**@jsx jsx */
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import * as BioData from '../../../data/bio';
+import { bioData } from '../../../data/bio';
 import { useTheme } from '../../../theming/themes';
-import { EducationIcon } from '../../atoms/icons/EducationIcon';
-import { InterestIcon } from '../../atoms/icons/InterestIcon';
-import { JobIcon } from '../../atoms/icons/JobIcon';
-import { LocationIcon } from '../../atoms/icons/LocationIcon';
 import { Layout } from '../../atoms/Layout';
 import { Typography } from '../../atoms/Typography';
 import { ArticleCard } from '../../molecules/Card/ArticleCard';
@@ -41,50 +37,31 @@ export const BioSection: React.FC = () => {
             justify-content: center;
           `}
         >
-          <ListCard
-            headingIcon={LocationIcon}
-            heading="Locations"
-            margin={theme.spacing.s}
-            color="standard"
-            backgroundColor="standard"
-            listItems={BioData.locations}
-            css={css`
-              flex: 1;
-            `}
-          />
-          <ListCard
-            headingIcon={EducationIcon}
-            heading="Education"
-            margin={theme.spacing.s}
-            color="standard"
-            backgroundColor="standard"
-            listItems={BioData.education}
-            css={css`
-              flex: 1;
-            `}
-          />
-          <ListCard
-            headingIcon={JobIcon}
-            heading="Jobs"
-            margin={theme.spacing.s}
-            color="standard"
-            backgroundColor="standard"
-            listItems={BioData.jobs}
-            css={css`
-              flex: 1;
-            `}
-          />
-          <ArticleCard
-            headingIcon={InterestIcon}
-            margin={theme.spacing.s}
-            color="standard"
-            backgroundColor="standard"
-            heading="Hobbies"
-            body={BioData.hobbies}
-            css={css`
-              flex: 1;
-            `}
-          />
+          {bioData.map(bio =>
+            bio.type === 'list' ? (
+              <ListCard
+                {...bio.data}
+                key={bio.data.heading}
+                margin={theme.spacing.s}
+                color="standard"
+                backgroundColor="standard"
+                css={css`
+                  flex: 1;
+                `}
+              />
+            ) : (
+              <ArticleCard
+                {...bio.data}
+                key={bio.data.heading}
+                margin={theme.spacing.s}
+                color="standard"
+                backgroundColor="standard"
+                css={css`
+                  flex: 1;
+                `}
+              />
+            )
+          )}
         </div>
       </div>
     </Layout>

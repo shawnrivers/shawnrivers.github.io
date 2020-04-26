@@ -9,7 +9,7 @@ import { Typography } from '../../../atoms/Typography';
 const iconSize = 48;
 const headingIconYOffset = iconSize / 2;
 
-type ArticleCardProps = {
+export type ArticleCardProps = {
   headingIcon: SvgIconComponent;
   heading: string;
   body: string;

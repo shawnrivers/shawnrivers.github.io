@@ -55,6 +55,10 @@ const App = (props: AppProps) => {
           property="og:image"
           content="https://raw.githubusercontent.com/shawnrivers/shawnrivers.github.io/develop/public/meta-social-text.jpg"
         />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="640" />
+        <meta property="og:image:alt" content="Yuxiao He personal page" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@yuxiao_he" />
         <meta name="mobile-web-app-capable" content="yes" />

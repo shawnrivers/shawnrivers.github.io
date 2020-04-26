@@ -10,7 +10,7 @@
     "start": "next start",
     "export": "next export",
     "predeploy": "env NODE_ENV=production next build && next export && touch out/.nojekyll",
-    "deploy": "gh-pages -d out",
+    "deploy": "gh-pages -b master -d out",
     "typecheck": "tsc",
     "lint": "eslint '**/*.{ts,tsx}'",
     "lint:fix": "eslint '**/*.{ts,tsx}' --fix",

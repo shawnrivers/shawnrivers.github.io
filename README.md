@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://shawnrivers.github.io/">
-    <img alt="Gatsby" src="https://raw.githubusercontent.com/shawnrivers/home-page/master/components/images/profile-3x.jpg" style="border-radius: 50%; width: 128px;" />
+    <img alt="Gatsby" src="https://raw.githubusercontent.com/shawnrivers/home-page/master/components/images/profile-3x.jpg" width="256" />
   </a>
 </p>
 <h1 align="center">

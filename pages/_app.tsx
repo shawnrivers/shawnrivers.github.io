@@ -57,7 +57,7 @@ const App = (props: AppProps) => {
         <meta name="og:description" content="Yuxiao He personal page" />
         <meta
           property="og:image"
-          content="https://raw.githubusercontent.com/shawnrivers/shawnrivers.github.io/develop/public/meta-image.jpg"
+          content="https://raw.githubusercontent.com/shawnrivers/shawnrivers.github.io/develop/public/meta-social.jpg"
         />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

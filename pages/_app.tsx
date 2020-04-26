@@ -48,17 +48,17 @@ const App = (props: AppProps) => {
         <title>Yuxiao He</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="Yuxiao He" />
-        <meta property="og:description" content="Yuxiao He personal page" />
-        <meta property="og:url" content="https://shawnrivers.github.io/" />
+        <meta name="og:title" content="Yuxiao He" />
+        <meta name="og:description" content="Yuxiao He personal page" />
+        <meta name="og:url" content="https://shawnrivers.github.io/" />
         <meta
-          property="og:image"
+          name="og:image"
           content="https://raw.githubusercontent.com/shawnrivers/shawnrivers.github.io/develop/public/meta-social-text.jpg"
         />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1280" />
-        <meta property="og:image:height" content="640" />
-        <meta property="og:image:alt" content="Yuxiao He personal page" />
+        <meta name="og:image:type" content="image/jpeg" />
+        <meta name="og:image:width" content="1280" />
+        <meta name="og:image:height" content="640" />
+        <meta name="og:image:alt" content="Yuxiao He personal page" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@yuxiao_he" />
         <meta name="mobile-web-app-capable" content="yes" />

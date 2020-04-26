@@ -8,6 +8,7 @@ export const globalColors = {
   white: '#FFFFFF',
   red0: '#EB5757',
   red1: '#FFB1B1',
+  twitter: '#1DA1F2',
 };
 
 export type GlobalColor = keyof typeof globalColors;

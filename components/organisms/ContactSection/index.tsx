@@ -8,11 +8,13 @@ import { Typography } from '../../atoms/Typography';
 import { SP_EDGE } from '../../../libs/media';
 import { contactsData } from '../../../data/contacts';
 
-export const ContactSection: React.FC = () => {
+export const ContactSection: React.FC<React.HTMLAttributes<
+  HTMLElement
+>> = props => {
   const theme = useTheme();
 
   return (
-    <Layout element="section" backgroundColor="variant0">
+    <Layout element="section" backgroundColor="variant0" {...props}>
       <div
         css={css`
           display: flex;
@@ -28,7 +30,7 @@ export const ContactSection: React.FC = () => {
             margin-bottom: ${theme.spacing.m}px;
           `}
         >
-          Contacts
+          Contact
         </Typography>
         <ul
           css={css`

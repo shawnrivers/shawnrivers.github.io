@@ -10,17 +10,18 @@ type HeaderProps = {
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
   onClickSwitchTheme: () => void;
-};
+} & React.HTMLAttributes<HTMLElement>;
 
 export const Header: React.FC<HeaderProps> = ({
   color = 'standard',
   backgroundColor = 'standard',
   onClickSwitchTheme,
+  ...restProps
 }) => {
   const theme = useTheme();
 
   return (
-    <Layout element="header" backgroundColor={backgroundColor}>
+    <Layout element="header" backgroundColor={backgroundColor} {...restProps}>
       <div
         css={css`
           display: flex;

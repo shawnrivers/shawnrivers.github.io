@@ -8,11 +8,13 @@ import { Typography } from '../../atoms/Typography';
 import { ArticleCard } from '../../molecules/Card/ArticleCard';
 import { ListCard } from '../../molecules/Card/ListCard';
 
-export const BioSection: React.FC = () => {
+export const BioSection: React.FC<React.HTMLAttributes<
+  HTMLElement
+>> = props => {
   const theme = useTheme();
 
   return (
-    <Layout element="section" backgroundColor="variant0">
+    <Layout element="section" backgroundColor="variant0" {...props}>
       <div
         css={css`
           display: flex;

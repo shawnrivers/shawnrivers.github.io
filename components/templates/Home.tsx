@@ -6,13 +6,11 @@ import { IntroSection } from '../organisms/IntroSection';
 import { WorksSection } from '../organisms/WorksSection';
 import { ContactSection } from '../organisms/ContactSection';
 
-export const Home: React.FC = () => {
-  return (
-    <React.Fragment>
-      <IntroSection />
-      <BioSection />
-      <WorksSection />
-      <ContactSection />
-    </React.Fragment>
-  );
-};
+export const Home: React.FC = () => (
+  <React.Fragment>
+    <IntroSection />
+    <BioSection id="bio" />
+    <WorksSection id="works" />
+    <ContactSection id="contact" />
+  </React.Fragment>
+);

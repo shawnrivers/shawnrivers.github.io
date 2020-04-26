@@ -13,11 +13,13 @@ import profile1x from '../../images/profile-1x.jpg';
 import profile2x from '../../images/profile-2x.jpg';
 import profile3x from '../../images/profile-3x.jpg';
 
-export const IntroSection: React.FC = () => {
+export const IntroSection: React.FC<React.HTMLAttributes<
+  HTMLElement
+>> = props => {
   const theme = useTheme();
 
   return (
-    <Layout element="section" backgroundColor="standard">
+    <Layout element="section" backgroundColor="standard" {...props}>
       <div
         css={css`
           display: flex;

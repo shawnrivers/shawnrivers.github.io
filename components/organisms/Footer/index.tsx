@@ -8,14 +8,15 @@ import { Typography } from '../../atoms/Typography';
 type FooterProps = {
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
-} & React.FormHTMLAttributes<HTMLElement>;
+} & React.HTMLAttributes<HTMLElement>;
 
 export const Footer: React.FC<FooterProps> = ({
   color = 'standard',
   backgroundColor = 'standard',
   children,
+  ...restProps
 }) => (
-  <Layout element="footer" backgroundColor={backgroundColor}>
+  <Layout element="footer" backgroundColor={backgroundColor} {...restProps}>
     <Typography
       variant="body2"
       color={color}

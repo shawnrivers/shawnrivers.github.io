@@ -8,11 +8,13 @@ import { Typography } from '../../atoms/Typography';
 import { LinkCard } from '../../molecules/Card/LinkCard';
 import { worksData } from '../../../data/works';
 
-export const WorksSection: React.FC = () => {
+export const WorksSection: React.FC<React.HTMLAttributes<
+  HTMLElement
+>> = props => {
   const theme = useTheme();
 
   return (
-    <Layout element="section" backgroundColor="standard">
+    <Layout element="section" backgroundColor="standard" {...props}>
       <div
         css={css`
           display: flex;

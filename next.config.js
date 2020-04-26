@@ -1,6 +1,6 @@
 const withImages = require('next-images');
 
-const repository = '/home-page';
+const repository = '';
 const pathPrefix = process.env.NODE_ENV === 'production' ? repository : '';
 
 module.exports = withImages({

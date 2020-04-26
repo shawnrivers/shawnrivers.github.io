@@ -50,6 +50,7 @@ const App = (props: AppProps) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="og:title" content="Yuxiao He" />
         <meta name="og:description" content="Yuxiao He personal page" />
+        <meta name="og:type" content="website" />
         <meta name="og:url" content="https://shawnrivers.github.io/" />
         <meta
           name="og:image"

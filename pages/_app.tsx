@@ -46,7 +46,19 @@ const App = (props: AppProps) => {
     <>
       <Head>
         <title>Yuxiao He</title>
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="title" content="Yuxiao He" />
+        <meta name="description" content="Yuxiao He personal page" />
+        <meta name="url" content="https://shawnrivers.github.io/" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@yuxiao_he" />
+        <meta name="og:title" content="Yuxiao He" />
+        <meta name="og:description" content="Yuxiao He personal page" />
+        <meta property="og:image" content={`${basePath}/meta-image.jpg`} />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="icon" type="image/png" href={`${basePath}/favicon.png`} />
       </Head>
       <ThemeProvider theme={theme}>

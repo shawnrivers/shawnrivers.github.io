@@ -55,7 +55,10 @@ const App = (props: AppProps) => {
         <meta name="twitter:creator" content="@yuxiao_he" />
         <meta name="og:title" content="Yuxiao He" />
         <meta name="og:description" content="Yuxiao He personal page" />
-        <meta property="og:image" content={`${basePath}/meta-image.jpg`} />
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/shawnrivers/shawnrivers.github.io/develop/public/meta-image.jpg"
+        />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

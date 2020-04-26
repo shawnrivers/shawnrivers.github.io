@@ -5,8 +5,9 @@ import { AppProps } from 'next/app';
 import getConfig from 'next/config';
 import Head from 'next/head';
 import * as React from 'react';
-import { Layout } from '../components/atoms/Layout';
-import { Header } from '../components/molecules/Header';
+import { Footer } from '../components/organisms/Footer';
+import { Header } from '../components/organisms/Header';
+import { copyright } from '../data/copyright';
 import { ThemeKey, themes } from '../theming/themes';
 
 const {
@@ -108,10 +109,15 @@ const App = (props: AppProps) => {
             background-color: ${theme.colors.theme.background.standard};
           `}
         >
-          <Layout>
-            <Header onClickSwitchTheme={handleSwitchTheme} />
-          </Layout>
+          <Header
+            color="standard"
+            backgroundColor="standard"
+            onClickSwitchTheme={handleSwitchTheme}
+          />
           <props.Component {...props.pageProps} />
+          <Footer color="standard" backgroundColor="standard">
+            {copyright}
+          </Footer>
         </div>
       </ThemeProvider>
     </>

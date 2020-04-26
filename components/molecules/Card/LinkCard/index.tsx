@@ -11,12 +11,12 @@ import { CircleIcon } from '../../../atoms/CircleIcon';
 const iconSize = 128;
 const headingIconYOffset = iconSize / 2;
 
-type LinkCardProps = {
+export type LinkCardProps = {
   to: string;
   headingIcon: {
     src: string;
     srcSet: string;
-    width: number;
+    size: number;
   };
   badgeIcon?: React.ReactNode;
   heading: string;
@@ -68,7 +68,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
             src={headingIcon.src}
             srcSet={headingIcon.srcSet}
             alt={heading}
-            width={headingIcon.width}
+            width={headingIcon.size}
             css={css`
               background-color: ${theme.colors.theme.primary[color]};
               border: 4px solid ${theme.colors.theme.primary[color]};

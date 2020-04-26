@@ -5,11 +5,8 @@ import { Layout } from '../../atoms/Layout';
 import { Typography } from '../../atoms/Typography';
 import { useTheme } from '../../../theming/themes';
 import { LinkCard } from '../../molecules/Card/LinkCard';
-import nogizakalib1x from '../../images/nogizakalib-1x.jpg';
-import nogizakalib2x from '../../images/nogizakalib-2x.jpg';
-import nogizakalib3x from '../../images/nogizakalib-3x.jpg';
-import { TwitterIcon } from '../../atoms/icons/TwitterIcon';
 import { CircleIcon } from '../../atoms/CircleIcon';
+import * as WorksData from '../../../data/works';
 
 export const WorksSection: React.FC = () => {
   const theme = useTheme();
@@ -41,14 +38,18 @@ export const WorksSection: React.FC = () => {
           `}
         >
           <LinkCard
-            to="https://shawnrivers.github.io/nogizaka-lib-redesign/"
+            to={WorksData.nogizakaLib.url}
             headingIcon={{
-              src: nogizakalib1x,
-              srcSet: `${nogizakalib1x} 1x, ${nogizakalib2x} 2x, ${nogizakalib3x} 3x`,
-              width: 128,
+              size: 128,
+              ...WorksData.nogizakaLib.headingIcon,
             }}
-            heading="Nogizaka Lib"
-            body="A web application showing the information about Nogizaka46 in a user-friendly way"
+            badgeIcon={
+              WorksData.nogizakaLib.badgeIcon ? (
+                <CircleIcon size={30} {...WorksData.nogizakaLib.badgeIcon} />
+              ) : undefined
+            }
+            heading={WorksData.nogizakaLib.heading}
+            body={WorksData.nogizakaLib.body}
             color="standard"
             backgroundColor="variant0"
             margin={theme.spacing.s}
@@ -57,22 +58,16 @@ export const WorksSection: React.FC = () => {
             `}
           />
           <LinkCard
-            to="https://twitter.com/n46_news"
+            to={WorksData.nogizakaNews.url}
             headingIcon={{
-              src: nogizakalib1x,
-              srcSet: `${nogizakalib1x} 1x, ${nogizakalib2x} 2x, ${nogizakalib3x} 3x`,
-              width: 128,
+              size: 128,
+              ...WorksData.nogizakaNews.headingIcon,
             }}
             badgeIcon={
-              <CircleIcon
-                icon={TwitterIcon}
-                size={30}
-                color="white"
-                backgroundColor="twitter"
-              />
+              <CircleIcon size={30} {...WorksData.nogizakaNews.badgeIcon} />
             }
-            heading="Nogizaka News"
-            body="A Twitter Bot for retweeting Nogizaka46 news and tweeting members' schedules"
+            heading={WorksData.nogizakaNews.heading}
+            body={WorksData.nogizakaNews.body}
             color="standard"
             backgroundColor="variant0"
             margin={theme.spacing.s}

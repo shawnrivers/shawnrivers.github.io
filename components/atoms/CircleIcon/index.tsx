@@ -5,7 +5,7 @@ import { SvgIconComponent } from '../icons/types';
 import { useTheme, ThemeColors } from '../../../theming/themes';
 import { GlobalColor } from '../../../theming/colors';
 
-type CircleIconProps = {
+export type CircleIconProps = {
   icon: SvgIconComponent;
   size?: number;
   color?: keyof ThemeColors['primary'] | GlobalColor;

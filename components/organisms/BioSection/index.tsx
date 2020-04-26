@@ -21,9 +21,9 @@ export const BioSection: React.FC = () => {
         `}
       >
         <Typography
-          variant={'h3'}
+          variant="h3"
+          color="standard"
           css={css`
-            color: ${theme.colors.theme.primary.standard};
             text-align: center;
             margin-bottom: ${theme.spacing.m}px;
           `}

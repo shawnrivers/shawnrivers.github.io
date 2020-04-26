@@ -94,8 +94,8 @@ export const ListCard: React.FC<ListCardProps> = ({
       >
         <Typography
           variant="h4"
+          color={color}
           css={css`
-            color: ${theme.colors.theme.primary[color]};
             margin-bottom: ${theme.spacing.s}px;
             text-transform: uppercase;
           `}
@@ -125,12 +125,7 @@ export const ListCard: React.FC<ListCardProps> = ({
                   padding-left: ${theme.spacing.m}px;
                 `}
               >
-                <Typography
-                  variant="body2"
-                  css={css`
-                    color: ${theme.colors.theme.primary[color]};
-                  `}
-                >
+                <Typography variant="body2" color={color}>
                   {item.component}
                 </Typography>
               </div>

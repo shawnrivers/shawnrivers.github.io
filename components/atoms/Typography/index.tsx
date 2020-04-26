@@ -1,11 +1,17 @@
 /**@jsx jsx */
-import { jsx } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { TypographyVariant, useTheme } from '../../../theming/themes';
+import {
+  TypographyVariant,
+  useTheme,
+  ThemeColors,
+} from '../../../theming/themes';
+import { GlobalColor } from '../../../theming/colors';
 
 type TypographyProps = React.HTMLAttributes<HTMLElement> & {
   variant: TypographyVariant;
   element?: React.ElementType;
+  color?: keyof ThemeColors['primary'] | GlobalColor;
 };
 
 const variantMapping: { [key in TypographyVariant]: React.ElementType } = {
@@ -18,15 +24,31 @@ const variantMapping: { [key in TypographyVariant]: React.ElementType } = {
   caption: 'p',
 };
 
-export const Typography: React.FC<TypographyProps> = props => {
-  const { variant, element, children, ...restProps } = props;
-
+export const Typography: React.FC<TypographyProps> = ({
+  variant,
+  element,
+  color = 'standard',
+  children,
+  ...restProps
+}) => {
   const theme = useTheme();
+  const colors = React.useMemo(
+    () => ({ ...theme.colors.global, ...theme.colors.theme.primary }),
+    [theme]
+  );
 
   const Element = element ?? variantMapping[variant];
 
   return (
-    <Element css={[theme.typography[variant]]} {...restProps}>
+    <Element
+      css={[
+        theme.typography[variant],
+        css`
+          color: ${colors[color]};
+        `,
+      ]}
+      {...restProps}
+    >
       {children}
     </Element>
   );

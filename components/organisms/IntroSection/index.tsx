@@ -64,8 +64,8 @@ export const IntroSection: React.FC = () => {
         >
           <Typography
             variant="h2"
+            color="standard"
             css={css`
-              color: ${theme.colors.theme.primary.standard};
               margin-bottom: ${theme.spacing.xs}px;
             `}
           >
@@ -73,8 +73,8 @@ export const IntroSection: React.FC = () => {
           </Typography>
           <Typography
             variant="h4"
+            color="variant2"
             css={css`
-              color: ${theme.colors.theme.primary.variant2};
               margin-bottom: ${theme.spacing.xs}px;
             `}
           >
@@ -121,12 +121,7 @@ export const IntroSection: React.FC = () => {
             display: inline-block;
           `}
         >
-          <Typography
-            variant="h4"
-            css={css`
-              color: ${theme.colors.theme.primary.standard};
-            `}
-          >
+          <Typography variant="h4" color="standard">
             {IntroData.intro}
           </Typography>
         </div>

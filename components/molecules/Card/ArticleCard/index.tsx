@@ -65,20 +65,15 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       >
         <Typography
           variant="h4"
+          color={color}
           css={css`
-            color: ${theme.colors.theme.primary[color]};
             margin-bottom: ${theme.spacing.s}px;
             text-transform: uppercase;
           `}
         >
           {heading}
         </Typography>
-        <Typography
-          variant="body2"
-          css={css`
-            color: ${theme.colors.theme.primary[color]};
-          `}
-        >
+        <Typography variant="body2" color={color}>
           {body}
         </Typography>
       </article>

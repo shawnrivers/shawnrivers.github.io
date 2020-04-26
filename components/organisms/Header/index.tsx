@@ -1,10 +1,10 @@
 /**@jsx jsx */
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { Link } from '../../atoms/Link';
-import { ThemeSwitch } from '../../atoms/ThemeSwitch';
-import { useTheme, ThemeColors } from '../../../theming/themes';
+import { ThemeColors, useTheme } from '../../../theming/themes';
 import { Layout } from '../../atoms/Layout';
+import { ThemeSwitch } from '../../atoms/ThemeSwitch';
+import { Typography } from '../../atoms/Typography';
 
 type HeaderProps = {
   color?: keyof ThemeColors['primary'];
@@ -41,19 +41,25 @@ export const Header: React.FC<HeaderProps> = ({
           `}
         >
           <li>
-            <Link typography="body1" href="#bio">
-              Bio
-            </Link>
+            <a href="#bio">
+              <Typography variant="body1" color={color}>
+                Bio
+              </Typography>
+            </a>
           </li>
           <li>
-            <Link typography="body1" href="#works">
-              Works
-            </Link>
+            <a href="#works">
+              <Typography variant="body1" color={color}>
+                Works
+              </Typography>
+            </a>
           </li>
           <li>
-            <Link typography="body1" href="#contact">
-              Contact
-            </Link>
+            <a href="#contact">
+              <Typography variant="body1" color={color}>
+                Contact
+              </Typography>
+            </a>
           </li>
         </ul>
         <ThemeSwitch

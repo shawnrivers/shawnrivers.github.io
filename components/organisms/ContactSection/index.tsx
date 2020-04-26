@@ -1,12 +1,11 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
+import { contactsData } from '../../../data/contacts';
+import { SP_EDGE } from '../../../libs/media';
 import { useTheme } from '../../../theming/themes';
 import { Layout } from '../../atoms/Layout';
-import { Link } from '../../atoms/Link';
 import { Typography } from '../../atoms/Typography';
-import { SP_EDGE } from '../../../libs/media';
-import { contactsData } from '../../../data/contacts';
 
 export const ContactSection: React.FC<React.HTMLAttributes<
   HTMLElement
@@ -47,13 +46,20 @@ export const ContactSection: React.FC<React.HTMLAttributes<
             <li
               key={contactData.name}
               css={css`
-                color: ${theme.colors.theme.primary.standard};
-                margin: ${theme.spacing.xxs}px ${theme.spacing.s}px;
+                margin: 0 ${theme.spacing.s}px;
               `}
             >
-              <Link href={contactData.url} typography="body2">
-                {contactData.name}
-              </Link>
+              <a
+                href={contactData.url}
+                css={css`
+                  display: block;
+                  padding: ${theme.spacing.xxs}px 0;
+                `}
+              >
+                <Typography variant="body2" color="standard">
+                  {contactData.name}
+                </Typography>
+              </a>
             </li>
           ))}
         </ul>

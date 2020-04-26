@@ -7,7 +7,6 @@ import { useTheme } from '../../../theming/themes';
 import { CircleImage } from '../../atoms/CircleImage';
 import { TwitterIcon } from '../../atoms/icons/TwitterIcon';
 import { Layout } from '../../atoms/Layout';
-import { Link } from '../../atoms/Link';
 import { Typography } from '../../atoms/Typography';
 import profile1x from '../../images/profile-1x.jpg';
 import profile2x from '../../images/profile-2x.jpg';
@@ -82,29 +81,25 @@ export const IntroSection: React.FC<React.HTMLAttributes<
           >
             Usho Ka (JA)
           </Typography>
-          <div
-            css={css`
-              display: flex;
-              align-items: center;
-            `}
-          >
-            <TwitterIcon
-              fill={theme.colors.theme.primary.variant0}
-              title="Twitter"
+          <a href="https://twitter.com/yuxiao_he">
+            <div
               css={css`
-                margin-right: ${theme.spacing.xxs};
-              `}
-            />
-            <Link
-              href="https://twitter.com/yuxiao_he"
-              typography="body1"
-              css={css`
-                color: ${theme.colors.theme.primary.variant0};
+                display: flex;
+                align-items: center;
               `}
             >
-              @yuxiao_he
-            </Link>
-          </div>
+              <TwitterIcon
+                fill={theme.colors.theme.primary.variant0}
+                title="Twitter"
+                css={css`
+                  margin-right: ${theme.spacing.xxs}px;
+                `}
+              />
+              <Typography variant="body1" color="variant0">
+                @yuxiao_he
+              </Typography>
+            </div>
+          </a>
         </div>
       </div>
       <div

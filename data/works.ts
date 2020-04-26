@@ -1,9 +1,9 @@
-import { LinkCardProps } from '../components/molecules/Card/LinkCard';
 import { CircleIconProps } from '../components/atoms/CircleIcon';
+import { TwitterIcon } from '../components/atoms/icons/TwitterIcon';
 import nogizakalib1x from '../components/images/nogizakalib-1x.jpg';
 import nogizakalib2x from '../components/images/nogizakalib-2x.jpg';
 import nogizakalib3x from '../components/images/nogizakalib-3x.jpg';
-import { TwitterIcon } from '../components/atoms/icons/TwitterIcon';
+import { LinkCardProps } from '../components/molecules/Card/LinkCard';
 
 type LinkCardData = {
   url: string;
@@ -13,7 +13,7 @@ type LinkCardData = {
   badgeIcon?: Omit<CircleIconProps, 'size'>;
 };
 
-export const nogizakaLib: LinkCardData = {
+const nogizakaLib: LinkCardData = {
   url: 'https://shawnrivers.github.io/nogizaka-lib-redesign/',
   heading: 'Nogizaka Lib',
   body:
@@ -24,7 +24,7 @@ export const nogizakaLib: LinkCardData = {
   },
 };
 
-export const nogizakaNews: LinkCardData = {
+const nogizakaNews: LinkCardData = {
   url: 'https://twitter.com/n46_news',
   heading: 'Nogizaka News',
   body:
@@ -39,3 +39,5 @@ export const nogizakaNews: LinkCardData = {
     backgroundColor: 'twitter',
   },
 };
+
+export const worksData: LinkCardData[] = [nogizakaLib, nogizakaNews];

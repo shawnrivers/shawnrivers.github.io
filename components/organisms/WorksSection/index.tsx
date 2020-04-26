@@ -1,12 +1,12 @@
 /**@jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
+import { useTheme } from '../../../theming/themes';
+import { CircleIcon } from '../../atoms/CircleIcon';
 import { Layout } from '../../atoms/Layout';
 import { Typography } from '../../atoms/Typography';
-import { useTheme } from '../../../theming/themes';
 import { LinkCard } from '../../molecules/Card/LinkCard';
-import { CircleIcon } from '../../atoms/CircleIcon';
-import * as WorksData from '../../../data/works';
+import { worksData } from '../../../data/works';
 
 export const WorksSection: React.FC = () => {
   const theme = useTheme();
@@ -37,44 +37,29 @@ export const WorksSection: React.FC = () => {
             justify-content: center;
           `}
         >
-          <LinkCard
-            to={WorksData.nogizakaLib.url}
-            headingIcon={{
-              size: 128,
-              ...WorksData.nogizakaLib.headingIcon,
-            }}
-            badgeIcon={
-              WorksData.nogizakaLib.badgeIcon ? (
-                <CircleIcon size={30} {...WorksData.nogizakaLib.badgeIcon} />
-              ) : undefined
-            }
-            heading={WorksData.nogizakaLib.heading}
-            body={WorksData.nogizakaLib.body}
-            color="standard"
-            backgroundColor="variant0"
-            margin={theme.spacing.s}
-            customCSS={css`
-              flex: 1;
-            `}
-          />
-          <LinkCard
-            to={WorksData.nogizakaNews.url}
-            headingIcon={{
-              size: 128,
-              ...WorksData.nogizakaNews.headingIcon,
-            }}
-            badgeIcon={
-              <CircleIcon size={30} {...WorksData.nogizakaNews.badgeIcon} />
-            }
-            heading={WorksData.nogizakaNews.heading}
-            body={WorksData.nogizakaNews.body}
-            color="standard"
-            backgroundColor="variant0"
-            margin={theme.spacing.s}
-            customCSS={css`
-              flex: 1;
-            `}
-          />
+          {worksData.map(workData => (
+            <LinkCard
+              key={workData.heading}
+              to={workData.url}
+              headingIcon={{
+                size: 128,
+                ...workData.headingIcon,
+              }}
+              badgeIcon={
+                workData.badgeIcon ? (
+                  <CircleIcon size={30} {...workData.badgeIcon} />
+                ) : undefined
+              }
+              heading={workData.heading}
+              body={workData.body}
+              color="standard"
+              backgroundColor="variant0"
+              margin={theme.spacing.s}
+              customCSS={css`
+                flex: 1;
+              `}
+            />
+          ))}
         </div>
       </div>
     </Layout>

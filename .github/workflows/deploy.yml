@@ -16,6 +16,8 @@ jobs:
           node-version: '12.x'
       - name: Install dependencies
         run: yarn install
+      - name: Format
+        run: yarn format
       - name: Type check
         run: yarn tsc
       - name: Lint

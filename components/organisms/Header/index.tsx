@@ -34,7 +34,6 @@ export const Header: React.FC<HeaderProps> = ({
           css={css`
             color: ${theme.colors.theme.primary[color]};
             display: flex;
-            margin: auto;
           `}
         >
           <li>

@@ -30,7 +30,7 @@ export const ContactSection: React.FC<React.HTMLAttributes<
             margin-bottom: ${theme.spacing.m}px;
           `}
         >
-          Contact
+          #Contact
         </Typography>
         <ul
           css={css`

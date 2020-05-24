@@ -30,7 +30,7 @@ export const BioSection: React.FC<React.HTMLAttributes<
             margin-bottom: ${theme.spacing.m}px;
           `}
         >
-          Bio
+          #Bio
         </Typography>
         <div
           css={css`

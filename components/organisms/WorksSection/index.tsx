@@ -30,7 +30,7 @@ export const WorksSection: React.FC<React.HTMLAttributes<
             margin-bottom: ${theme.spacing.m}px;
           `}
         >
-          Works
+          #Works
         </Typography>
         <div
           css={css`

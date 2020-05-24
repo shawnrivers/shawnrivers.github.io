@@ -40,21 +40,21 @@ export const Header: React.FC<HeaderProps> = ({
           <li>
             <LinkBase href="#bio">
               <Typography variant="body1" color={color}>
-                Bio
+                #Bio
               </Typography>
             </LinkBase>
           </li>
           <li>
             <LinkBase href="#works">
               <Typography variant="body1" color={color}>
-                Works
+                #Works
               </Typography>
             </LinkBase>
           </li>
           <li>
             <LinkBase href="#contact">
               <Typography variant="body1" color={color}>
-                Contact
+                #Contact
               </Typography>
             </LinkBase>
           </li>

@@ -24,6 +24,8 @@ export const LinkBase: React.FC<LinkBaseProps> = props => {
         padding: ${theme.spacing.xs}px ${theme.spacing.s}px;
         border-radius: 8px;
         transition: background-color 0.3s ease-out;
+        text-decoration: underline;
+        text-underline-position: under;
 
         &:hover {
           background-color: ${backgroundColors[backgroundHoverColor]};

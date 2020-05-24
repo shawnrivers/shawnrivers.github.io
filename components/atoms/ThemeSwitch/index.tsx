@@ -4,8 +4,9 @@ import * as React from 'react';
 import { useTheme } from '../../../theming/themes';
 import { DarkModeIcon } from '../icons/DarkModeIcon';
 import { LightModeIcon } from '../icons/LightModeIcon';
+import { ButtonBase, ButtonBaseProps } from '../buttons/ButtonBase';
 
-type ThemeSwitchProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ThemeSwitchProps = ButtonBaseProps & {
   onClick: () => void;
 };
 
@@ -13,7 +14,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = props => {
   const theme = useTheme();
 
   return (
-    <button
+    <ButtonBase
       css={css`
         width: 32px;
         height: 32px;
@@ -24,7 +25,9 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = props => {
       <div
         css={css`
           overflow: hidden;
+          width: 24px;
           height: 24px;
+          margin: auto;
 
           & * {
             margin: 0;
@@ -55,6 +58,6 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = props => {
           `}
         />
       </div>
-    </button>
+    </ButtonBase>
   );
 };

@@ -25,8 +25,8 @@ export const Header: React.FC<HeaderProps> = ({
       <div
         css={css`
           display: flex;
+          align-items: center;
           justify-content: center;
-          position: relative;
         `}
       >
         <ul
@@ -66,8 +66,6 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={onClickSwitchTheme}
           css={css`
             right: 0;
-            top: -2px;
-            position: absolute;
           `}
         ></ThemeSwitch>
       </div>

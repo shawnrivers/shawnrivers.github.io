@@ -48,6 +48,7 @@ const App = (props: AppProps) => {
         <title>Yuxiao He</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Yuxiao He personal page" />
         <meta name="og:title" content="Yuxiao He" />
         <meta name="og:description" content="Yuxiao He personal page" />
         <meta name="og:type" content="website" />

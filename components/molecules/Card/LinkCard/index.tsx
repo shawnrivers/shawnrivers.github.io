@@ -40,8 +40,31 @@ export const LinkCard: React.FC<LinkCardProps> = ({
   const theme = useTheme();
 
   return (
-    <a href={to}>
+    <a
+      href={to}
+      css={css`
+        margin: 0;
+        box-shadow: none;
+
+        & div[data-hover-style] {
+          transition: box-shadow 0.25s ease-out;
+          box-shadow: none;
+        }
+
+        :hover {
+          & div[data-hover-style] {
+            box-shadow: 4px 4px 12px ${theme.colors.global.grey2};
+          }
+        }
+
+        &:focus,
+        &:active {
+          outline: auto;
+        }
+      `}
+    >
       <div
+        data-hover-style
         css={css`
           background-color: ${theme.colors.theme.background[backgroundColor]};
           display: flex;
@@ -107,10 +130,12 @@ export const LinkCard: React.FC<LinkCardProps> = ({
           </Typography>
         </article>
         <div
+          data-hover-style
           css={css`
             position: absolute;
             bottom: -18px;
             right: -16px;
+            border-radius: 50%;
           `}
         >
           <CircleIcon

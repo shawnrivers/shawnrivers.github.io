@@ -5,7 +5,7 @@ import { ThemeColors, useTheme } from '../../../theming/themes';
 import { Layout } from '../../atoms/Layout';
 import { ThemeSwitch } from '../../atoms/ThemeSwitch';
 import { Typography } from '../../atoms/Typography';
-import { TextLink } from '../../atoms/links/TextLink';
+import { LinkBase } from '../../atoms/buttons/LinkBase';
 
 type HeaderProps = {
   color?: keyof ThemeColors['primary'];
@@ -38,25 +38,25 @@ export const Header: React.FC<HeaderProps> = ({
           `}
         >
           <li>
-            <TextLink href="#bio">
+            <LinkBase href="#bio">
               <Typography variant="body1" color={color}>
                 Bio
               </Typography>
-            </TextLink>
+            </LinkBase>
           </li>
           <li>
-            <TextLink href="#works">
+            <LinkBase href="#works">
               <Typography variant="body1" color={color}>
                 Works
               </Typography>
-            </TextLink>
+            </LinkBase>
           </li>
           <li>
-            <TextLink href="#contact">
+            <LinkBase href="#contact">
               <Typography variant="body1" color={color}>
                 Contact
               </Typography>
-            </TextLink>
+            </LinkBase>
           </li>
         </ul>
         <ThemeSwitch

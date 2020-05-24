@@ -4,11 +4,11 @@ import * as React from 'react';
 import { useTheme, ThemeColors } from '../../../../theming/themes';
 import { GlobalColor } from '../../../../theming/colors';
 
-export type TextLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+export type LinkBaseProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   backgroundHoverColor?: keyof ThemeColors['background'] | GlobalColor;
 };
 
-export const TextLink: React.FC<TextLinkProps> = props => {
+export const LinkBase: React.FC<LinkBaseProps> = props => {
   const { backgroundHoverColor = 'variant0', children, ...restProps } = props;
   const theme = useTheme();
   const backgroundColors = React.useMemo(
@@ -27,6 +27,10 @@ export const TextLink: React.FC<TextLinkProps> = props => {
 
         &:hover {
           background-color: ${backgroundColors[backgroundHoverColor]};
+        }
+
+        &:focus {
+          outline: auto;
         }
       `}
     >

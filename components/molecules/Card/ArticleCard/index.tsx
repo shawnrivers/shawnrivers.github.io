@@ -2,7 +2,11 @@
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { ThemeColors, useTheme } from '../../../../theming/themes';
+import {
+  ThemeColors,
+  ThemeSpacing,
+  useTheme,
+} from '../../../../theming/themes';
 import { SvgIconComponent } from '../../../atoms/icons/types';
 import { Typography } from '../../../atoms/Typography';
 
@@ -15,7 +19,7 @@ export type ArticleCardProps = {
   body: string;
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
-  margin?: number;
+  margin?: keyof ThemeSpacing;
 };
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({
@@ -24,11 +28,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   body,
   color = 'standard',
   backgroundColor = 'standard',
-  margin = 0,
+  margin = 'none',
   ...restProps
 }) => {
   const theme = useTheme();
-
+  const marginValue = theme.spacing[margin];
   const HeadingIcon = headingIcon;
 
   return (
@@ -38,7 +42,8 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
+        margin: calc(${marginValue} + ${headingIconYOffset}px) ${marginValue}
+          ${marginValue};
         max-width: ${CARD_MAX_WIDTH}px;
         min-width: ${CARD_MIN_WIDTH}px;
         border-radius: 8px;
@@ -52,7 +57,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         height={iconSize}
         title={heading}
         css={css`
-          margin: -${headingIconYOffset}px 0 ${theme.spacing.xxs}px;
+          margin: -${headingIconYOffset}px 0 ${theme.spacing.xxs};
         `}
       />
       <article
@@ -60,14 +65,14 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 0 ${theme.spacing.m}px ${theme.spacing.m}px;
+          padding: 0 ${theme.spacing.m} ${theme.spacing.m};
         `}
       >
         <Typography
           variant="h4"
           color={color}
           css={css`
-            margin-bottom: ${theme.spacing.s}px;
+            margin-bottom: ${theme.spacing.s};
             text-transform: uppercase;
           `}
         >

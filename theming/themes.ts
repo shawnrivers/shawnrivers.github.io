@@ -27,7 +27,7 @@ type TypographyStyles = {
   fontWeight: 'normal' | 'bold';
 };
 
-type Typography = {
+type ThemeTypography = {
   h1: TypographyStyles;
   h2: TypographyStyles;
   h3: TypographyStyles;
@@ -37,18 +37,19 @@ type Typography = {
   caption: TypographyStyles;
 };
 
-export type TypographyVariant = keyof Typography;
+export type TypographyVariant = keyof ThemeTypography;
 
 export type ThemeKey = 'light' | 'dark';
 
-type Spacing = {
-  xxs: number;
-  xs: number;
-  s: number;
-  m: number;
-  l: number;
-  xl: number;
-  xxl: number;
+export type ThemeSpacing = {
+  none: string;
+  xxs: string;
+  xs: string;
+  s: string;
+  m: string;
+  l: string;
+  xl: string;
+  xxl: string;
 };
 
 export type Theme = {
@@ -58,12 +59,12 @@ export type Theme = {
       [key in GlobalColor]: string;
     };
   };
-  typography: Typography;
-  spacing: Spacing;
+  typography: ThemeTypography;
+  spacing: ThemeSpacing;
   key: ThemeKey;
 };
 
-const typography: Typography = {
+const typography: ThemeTypography = {
   h1: {
     fontSize: '3rem',
     fontWeight: 'bold',
@@ -94,14 +95,15 @@ const typography: Typography = {
   },
 };
 
-export const spacing: Spacing = {
-  xxs: 4,
-  xs: 8,
-  s: 16,
-  m: 24,
-  l: 32,
-  xl: 40,
-  xxl: 56,
+export const spacing: ThemeSpacing = {
+  none: '0rem',
+  xxs: '0.25rem',
+  xs: '0.5rem',
+  s: '1rem',
+  m: '1.5rem',
+  l: '2rem',
+  xl: '3rem',
+  xxl: '4rem',
 };
 
 const {

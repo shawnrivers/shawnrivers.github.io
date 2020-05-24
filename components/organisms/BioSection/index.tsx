@@ -27,7 +27,7 @@ export const BioSection: React.FC<React.HTMLAttributes<
           color="standard"
           css={css`
             text-align: center;
-            margin-bottom: ${theme.spacing.m}px;
+            margin-bottom: ${theme.spacing.m};
           `}
         >
           #Bio
@@ -44,7 +44,7 @@ export const BioSection: React.FC<React.HTMLAttributes<
               <ListCard
                 {...bio.data}
                 key={bio.data.heading}
-                margin={theme.spacing.s}
+                margin="s"
                 color="standard"
                 backgroundColor="standard"
                 css={css`
@@ -55,7 +55,7 @@ export const BioSection: React.FC<React.HTMLAttributes<
               <ArticleCard
                 {...bio.data}
                 key={bio.data.heading}
-                margin={theme.spacing.s}
+                margin="s"
                 color="standard"
                 backgroundColor="standard"
                 css={css`

@@ -27,7 +27,7 @@ export const WorksSection: React.FC<React.HTMLAttributes<
           color="standard"
           css={css`
             text-align: center;
-            margin-bottom: ${theme.spacing.m}px;
+            margin-bottom: ${theme.spacing.m};
           `}
         >
           #Works
@@ -56,7 +56,7 @@ export const WorksSection: React.FC<React.HTMLAttributes<
               body={workData.body}
               color="standard"
               backgroundColor="variant0"
-              margin={theme.spacing.s}
+              margin="s"
               css={css`
                 flex: 1;
               `}

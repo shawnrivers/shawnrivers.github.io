@@ -27,7 +27,7 @@ export const ContactSection: React.FC<React.HTMLAttributes<
           color="standard"
           css={css`
             text-align: center;
-            margin-bottom: ${theme.spacing.m}px;
+            margin-bottom: ${theme.spacing.m};
           `}
         >
           #Contact

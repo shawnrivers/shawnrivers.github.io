@@ -2,7 +2,11 @@
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { ThemeColors, useTheme } from '../../../../theming/themes';
+import {
+  ThemeColors,
+  useTheme,
+  ThemeSpacing,
+} from '../../../../theming/themes';
 import { CircleIcon } from '../../../atoms/CircleIcon';
 import { CircleImage } from '../../../atoms/CircleImage';
 import { ArrowIcon } from '../../../atoms/icons/ArrowIcon';
@@ -23,7 +27,7 @@ export type LinkCardProps = {
   body: string;
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
-  margin?: number;
+  margin?: keyof ThemeSpacing;
 };
 
 export const LinkCard: React.FC<LinkCardProps> = ({
@@ -34,10 +38,11 @@ export const LinkCard: React.FC<LinkCardProps> = ({
   body,
   color = 'standard',
   backgroundColor = 'standard',
-  margin = 0,
+  margin = 'none',
   ...restProps
 }) => {
   const theme = useTheme();
+  const marginValue = theme.spacing[margin];
 
   return (
     <a
@@ -71,7 +76,8 @@ export const LinkCard: React.FC<LinkCardProps> = ({
           flex-direction: column;
           align-items: center;
           position: relative;
-          margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
+          margin: calc(${marginValue} + ${headingIconYOffset}px) ${marginValue}
+            ${marginValue};
           max-width: ${CARD_MAX_WIDTH}px;
           min-width: ${CARD_MIN_WIDTH}px;
           border-radius: 8px;
@@ -92,7 +98,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
             css={css`
               background-color: ${theme.colors.theme.primary[color]};
               border: 4px solid ${theme.colors.theme.primary[color]};
-              margin: -${headingIconYOffset}px 0 ${theme.spacing.s}px;
+              margin: -${headingIconYOffset}px 0 ${theme.spacing.s};
             `}
           />
           {badgeIcon ? (
@@ -112,14 +118,14 @@ export const LinkCard: React.FC<LinkCardProps> = ({
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 ${theme.spacing.m}px ${theme.spacing.m}px;
+            padding: 0 ${theme.spacing.m} ${theme.spacing.m};
           `}
         >
           <Typography
             variant="h4"
             color={color}
             css={css`
-              margin-bottom: ${theme.spacing.s}px;
+              margin-bottom: ${theme.spacing.s};
               text-transform: uppercase;
             `}
           >

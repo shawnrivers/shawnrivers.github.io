@@ -26,7 +26,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          margin-bottom: ${theme.spacing.m}px;
+          margin-bottom: ${theme.spacing.m};
 
           @media (max-width: ${SP_EDGE}px) {
             flex-direction: column;
@@ -45,10 +45,10 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             background-color: ${theme.colors.global.white};
             border: 4px solid ${theme.colors.theme.primary.standard};
             margin-bottom: 0;
-            margin-right: ${theme.spacing.s}px;
+            margin-right: ${theme.spacing.s};
 
             @media (max-width: ${SP_EDGE}px) {
-              margin-bottom: ${theme.spacing.xs}px;
+              margin-bottom: ${theme.spacing.xs};
               margin-right: 0;
             }
           `}
@@ -69,7 +69,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             variant="h2"
             color="standard"
             css={css`
-              padding: ${theme.spacing.xs}px ${theme.spacing.s}px;
+              padding: ${theme.spacing.xs} ${theme.spacing.s};
             `}
           >
             Yuxiao He
@@ -78,7 +78,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             variant="h4"
             color="variant2"
             css={css`
-              padding: ${theme.spacing.xs}px ${theme.spacing.s}px;
+              padding: ${theme.spacing.xs} ${theme.spacing.s};
             `}
           >
             Usho Ka (JA)
@@ -94,7 +94,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
                 fill={theme.colors.theme.primary.variant0}
                 title="Twitter"
                 css={css`
-                  margin-right: ${theme.spacing.xxs}px;
+                  margin-right: ${theme.spacing.xxs};
                 `}
               />
               <Typography variant="body1" color="variant0">
@@ -108,12 +108,12 @@ export const IntroSection: React.FC<React.HTMLAttributes<
         css={css`
           display: flex;
           justify-content: center;
-          margin: ${theme.spacing.s}px;
+          margin: ${theme.spacing.s};
         `}
       >
         <div
           css={css`
-            padding: ${theme.spacing.m}px ${theme.spacing.l}px;
+            padding: ${theme.spacing.m} ${theme.spacing.l};
             background-color: ${theme.colors.theme.background.variant0};
             border-radius: 8px;
             text-align: center;

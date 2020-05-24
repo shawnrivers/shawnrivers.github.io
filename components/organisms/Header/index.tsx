@@ -60,6 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
           </li>
         </ul>
         <ThemeSwitch
+          color={color}
           onClick={onClickSwitchTheme}
           css={css`
             right: 0;

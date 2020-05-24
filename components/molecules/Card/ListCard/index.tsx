@@ -31,7 +31,7 @@ const RoundDot: React.FC<{
         position: absolute;
         background-color: ${isActive
           ? theme.colors.global.red0
-          : theme.colors.global.grey2};
+          : theme.colors.global.gray2};
       `}
       {...restProps}
     ></div>
@@ -111,7 +111,7 @@ export const ListCard: React.FC<ListCardProps> = ({
 
                 :not(:last-child) > .item-text {
                   border-left: ${listLineWidth}px solid
-                    ${theme.colors.global.grey4};
+                    ${theme.colors.global.gray4};
                   padding-bottom: ${theme.spacing.m}px;
                 }
               `}

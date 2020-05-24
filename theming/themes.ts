@@ -113,12 +113,12 @@ export const spacing: Spacing = {
 };
 
 const {
-  grey0,
-  grey1,
-  grey2,
-  grey3,
-  grey4,
-  grey5,
+  gray0,
+  gray1,
+  gray2,
+  gray3,
+  gray4,
+  gray5,
   white,
   red0,
   red1,
@@ -134,10 +134,10 @@ const lightTheme: Theme = {
   colors: {
     theme: {
       primary: {
-        standard: grey0,
-        variant0: grey1,
-        variant1: grey2,
-        variant2: grey3,
+        standard: gray0,
+        variant0: gray1,
+        variant1: gray2,
+        variant2: gray3,
         inverse: white,
       },
       secondary: {
@@ -146,8 +146,8 @@ const lightTheme: Theme = {
       },
       background: {
         standard: white,
-        variant0: grey5,
-        inverse: grey0,
+        variant0: gray5,
+        inverse: gray0,
       },
     },
     global: globalColors,
@@ -161,18 +161,18 @@ const darkTheme: Theme = {
     theme: {
       primary: {
         standard: white,
-        variant0: grey5,
-        variant1: grey4,
-        variant2: grey2,
-        inverse: grey0,
+        variant0: gray5,
+        variant1: gray4,
+        variant2: gray2,
+        inverse: gray0,
       },
       secondary: {
         standard: red0,
         variant0: red1,
       },
       background: {
-        standard: grey0,
-        variant0: grey1,
+        standard: gray0,
+        variant0: gray1,
         inverse: white,
       },
     },

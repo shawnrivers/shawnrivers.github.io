@@ -53,7 +53,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
 
         :hover {
           & div[data-hover-style] {
-            box-shadow: 4px 4px 12px ${theme.colors.global.grey2};
+            box-shadow: 4px 4px 12px ${theme.colors.global.gray2};
           }
         }
 

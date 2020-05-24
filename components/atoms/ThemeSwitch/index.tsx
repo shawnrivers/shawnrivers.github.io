@@ -50,7 +50,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = props => {
           title="Dark mode"
           css={css`
             margin: 0;
-            transform: translateY(${theme.key === 'dark' ? '0' : '-27px'});
+            transform: translateY(${theme.key === 'dark' ? '0' : '-28px'});
             opacity: ${theme.key === 'dark' ? '1' : '0'};
           `}
         />
@@ -60,7 +60,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = props => {
           height="24"
           title="Light mode"
           css={css`
-            transform: translateY(${theme.key === 'dark' ? '0' : '-27px'});
+            transform: translateY(${theme.key === 'dark' ? '0' : '-28px'});
             opacity: ${theme.key === 'dark' ? '0' : '1'};
           `}
         />

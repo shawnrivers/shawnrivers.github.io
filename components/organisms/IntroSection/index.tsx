@@ -11,6 +11,7 @@ import { Typography } from '../../atoms/Typography';
 import profile1x from '../../images/profile-1x.jpg';
 import profile2x from '../../images/profile-2x.jpg';
 import profile3x from '../../images/profile-3x.jpg';
+import { TextLink } from '../../atoms/links/TextLink';
 
 export const IntroSection: React.FC<React.HTMLAttributes<
   HTMLElement
@@ -44,10 +45,10 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             background-color: ${theme.colors.global.white};
             border: 4px solid ${theme.colors.theme.primary.standard};
             margin-bottom: 0;
-            margin-right: ${theme.spacing.l}px;
+            margin-right: ${theme.spacing.s}px;
 
             @media (max-width: ${SP_EDGE}px) {
-              margin-bottom: ${theme.spacing.s}px;
+              margin-bottom: ${theme.spacing.xs}px;
               margin-right: 0;
             }
           `}
@@ -58,7 +59,6 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             flex-direction: column;
             align-items: flex-start;
             text-align: center;
-            padding-top: ${theme.spacing.xs}px;
 
             @media (max-width: ${SP_EDGE}px) {
               align-items: center;
@@ -69,20 +69,21 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             variant="h2"
             color="standard"
             css={css`
-              margin-bottom: ${theme.spacing.xs}px;
+              padding: ${theme.spacing.xs}px ${theme.spacing.s}px;
             `}
           >
             Yuxiao He
           </Typography>
-          <Typography variant="h4" color="variant2">
-            Usho Ka (JA)
-          </Typography>
-          <a
-            href="https://twitter.com/yuxiao_he"
+          <Typography
+            variant="h4"
+            color="variant2"
             css={css`
-              padding: ${theme.spacing.s}px 0;
+              padding: ${theme.spacing.xs}px ${theme.spacing.s}px;
             `}
           >
+            Usho Ka (JA)
+          </Typography>
+          <TextLink href="https://twitter.com/yuxiao_he">
             <div
               css={css`
                 display: flex;
@@ -100,7 +101,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
                 @yuxiao_he
               </Typography>
             </div>
-          </a>
+          </TextLink>
         </div>
       </div>
       <div

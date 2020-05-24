@@ -6,6 +6,7 @@ import { SP_EDGE } from '../../../libs/media';
 import { useTheme } from '../../../theming/themes';
 import { Layout } from '../../atoms/Layout';
 import { Typography } from '../../atoms/Typography';
+import { TextLink } from '../../atoms/links/TextLink';
 
 export const ContactSection: React.FC<React.HTMLAttributes<
   HTMLElement
@@ -44,17 +45,11 @@ export const ContactSection: React.FC<React.HTMLAttributes<
         >
           {contactsData.map(contactData => (
             <li key={contactData.name}>
-              <a
-                href={contactData.url}
-                css={css`
-                  display: block;
-                  padding: 20px ${theme.spacing.m}px;
-                `}
-              >
+              <TextLink href={contactData.url} backgroundHoverColor="standard">
                 <Typography variant="body2" color="standard">
                   {contactData.name}
                 </Typography>
-              </a>
+              </TextLink>
             </li>
           ))}
         </ul>

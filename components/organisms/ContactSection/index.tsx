@@ -38,7 +38,7 @@ export const ContactSection: React.FC<React.HTMLAttributes<
             flex-direction: row;
             align-items: center;
 
-            @media (max-width: ${SP_EDGE}px) {
+            @media (max-width: ${SP_EDGE}) {
               flex-direction: column;
             }
           `}

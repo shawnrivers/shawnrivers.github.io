@@ -28,13 +28,13 @@ export const Layout: React.FC<LayoutProps> = props => {
       <div
         css={css`
           max-width: calc(
-            (${CARD_MAX_WIDTH}px + ${theme.spacing.l} * 2) * 4 +
+            (${CARD_MAX_WIDTH} + ${theme.spacing.l} * 2) * 4 +
               ${theme.spacing.l} * 2
           );
           margin: auto;
           padding: ${theme.spacing.l};
 
-          @media (max-width: ${SP_SMALL}px) {
+          @media (max-width: ${SP_SMALL}) {
             padding: ${theme.spacing.m};
           }
         `}

@@ -78,8 +78,8 @@ export const LinkCard: React.FC<LinkCardProps> = ({
           position: relative;
           margin: calc(${marginValue} + ${headingIconYOffset}px) ${marginValue}
             ${marginValue};
-          max-width: ${CARD_MAX_WIDTH}px;
-          min-width: ${CARD_MIN_WIDTH}px;
+          max-width: ${CARD_MAX_WIDTH};
+          min-width: ${CARD_MIN_WIDTH};
           border-radius: 8px;
           height: auto;
         `}

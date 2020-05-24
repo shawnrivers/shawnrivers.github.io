@@ -28,7 +28,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
           justify-content: center;
           margin-bottom: ${theme.spacing.m};
 
-          @media (max-width: ${SP_EDGE}px) {
+          @media (max-width: ${SP_EDGE}) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -47,7 +47,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             margin-bottom: 0;
             margin-right: ${theme.spacing.s};
 
-            @media (max-width: ${SP_EDGE}px) {
+            @media (max-width: ${SP_EDGE}) {
               margin-bottom: ${theme.spacing.xs};
               margin-right: 0;
             }
@@ -60,7 +60,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             align-items: flex-start;
             text-align: center;
 
-            @media (max-width: ${SP_EDGE}px) {
+            @media (max-width: ${SP_EDGE}) {
               align-items: center;
             }
           `}

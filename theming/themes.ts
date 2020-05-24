@@ -24,7 +24,6 @@ export type BackgroundColor = keyof ThemeColors['background'];
 
 type TypographyStyles = {
   fontSize: string;
-  lineHeight: string;
   fontWeight: 'normal' | 'bold';
 };
 
@@ -66,38 +65,31 @@ export type Theme = {
 
 const typography: Typography = {
   h1: {
-    fontSize: '48px',
-    lineHeight: '60px',
+    fontSize: '3rem',
     fontWeight: 'bold',
   },
   h2: {
-    fontSize: '36px',
-    lineHeight: '45px',
+    fontSize: '2rem',
     fontWeight: 'bold',
   },
   h3: {
-    fontSize: '24px',
-    lineHeight: '30px',
+    fontSize: '1.5rem',
     fontWeight: 'bold',
   },
   h4: {
-    fontSize: '20px',
-    lineHeight: '25px',
+    fontSize: '1.25rem',
     fontWeight: 'bold',
   },
   body1: {
-    fontSize: '16px',
-    lineHeight: '20px',
+    fontSize: '1rem',
     fontWeight: 'normal',
   },
   body2: {
-    fontSize: '14px',
-    lineHeight: '18px',
+    fontSize: '0.9rem',
     fontWeight: 'normal',
   },
   caption: {
-    fontSize: '12px',
-    lineHeight: '15px',
+    fontSize: '0.75rem',
     fontWeight: 'normal',
   },
 };

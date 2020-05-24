@@ -89,13 +89,13 @@ const App = (props: AppProps) => {
             }
 
             body {
+              font-size: 100%;
               font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
               color: ${theme.colors.theme.primary.standard};
               background-color: ${theme.colors.theme.background.standard};
             }
 
             body, h1, h2, h3, h4, h5, h6, p, caption, a, div, section, article, main, header, footer, ul, li, ol {
-              font-size: 100%;
               margin: 0;
               padding: 0;
               border: 0;

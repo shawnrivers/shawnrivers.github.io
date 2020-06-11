@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { MAX_CONTENT, SP_SMALL } from '../../../libs/media';
+import { SP_SMALL, CARD_MAX_WIDTH } from '../../../libs/media';
 import { BackgroundColor, useTheme } from '../../../theming/themes';
 
 type LayoutProps = React.HTMLAttributes<HTMLElement> & {
@@ -27,12 +27,15 @@ export const Layout: React.FC<LayoutProps> = props => {
     >
       <div
         css={css`
-          max-width: ${MAX_CONTENT}px;
+          max-width: calc(
+            (${CARD_MAX_WIDTH} + ${theme.spacing.l} * 2) * 4 +
+              ${theme.spacing.l} * 2
+          );
           margin: auto;
-          padding: ${theme.spacing.l}px;
+          padding: ${theme.spacing.l};
 
-          @media (max-width: ${SP_SMALL}px) {
-            padding: ${theme.spacing.m}px;
+          @media (max-width: ${SP_SMALL}) {
+            padding: ${theme.spacing.m};
           }
         `}
       >

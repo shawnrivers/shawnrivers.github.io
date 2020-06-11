@@ -11,6 +11,7 @@ import { Typography } from '../../atoms/Typography';
 import profile1x from '../../images/profile-1x.jpg';
 import profile2x from '../../images/profile-2x.jpg';
 import profile3x from '../../images/profile-3x.jpg';
+import { LinkBase } from '../../atoms/buttons/LinkBase';
 
 export const IntroSection: React.FC<React.HTMLAttributes<
   HTMLElement
@@ -25,9 +26,9 @@ export const IntroSection: React.FC<React.HTMLAttributes<
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          margin-bottom: ${theme.spacing.m}px;
+          margin-bottom: ${theme.spacing.m};
 
-          @media (max-width: ${SP_EDGE}px) {
+          @media (max-width: ${SP_EDGE}) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -44,10 +45,10 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             background-color: ${theme.colors.global.white};
             border: 4px solid ${theme.colors.theme.primary.standard};
             margin-bottom: 0;
-            margin-right: ${theme.spacing.l}px;
+            margin-right: ${theme.spacing.s};
 
-            @media (max-width: ${SP_EDGE}px) {
-              margin-bottom: ${theme.spacing.s}px;
+            @media (max-width: ${SP_EDGE}) {
+              margin-bottom: ${theme.spacing.xs};
               margin-right: 0;
             }
           `}
@@ -58,9 +59,8 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             flex-direction: column;
             align-items: flex-start;
             text-align: center;
-            padding-top: ${theme.spacing.xs}px;
 
-            @media (max-width: ${SP_EDGE}px) {
+            @media (max-width: ${SP_EDGE}) {
               align-items: center;
             }
           `}
@@ -69,20 +69,21 @@ export const IntroSection: React.FC<React.HTMLAttributes<
             variant="h2"
             color="standard"
             css={css`
-              margin-bottom: ${theme.spacing.xs}px;
+              padding: ${theme.spacing.xs} ${theme.spacing.s};
             `}
           >
             Yuxiao He
           </Typography>
-          <Typography variant="h4" color="variant2">
-            Usho Ka (JA)
-          </Typography>
-          <a
-            href="https://twitter.com/yuxiao_he"
+          <Typography
+            variant="h4"
+            color="variant2"
             css={css`
-              padding: ${theme.spacing.s}px 0;
+              padding: ${theme.spacing.xs} ${theme.spacing.s};
             `}
           >
+            Usho Ka (JA)
+          </Typography>
+          <LinkBase href="https://twitter.com/yuxiao_he">
             <div
               css={css`
                 display: flex;
@@ -93,26 +94,26 @@ export const IntroSection: React.FC<React.HTMLAttributes<
                 fill={theme.colors.theme.primary.variant0}
                 title="Twitter"
                 css={css`
-                  margin-right: ${theme.spacing.xxs}px;
+                  margin-right: ${theme.spacing.xxs};
                 `}
               />
               <Typography variant="body1" color="variant0">
                 @yuxiao_he
               </Typography>
             </div>
-          </a>
+          </LinkBase>
         </div>
       </div>
       <div
         css={css`
           display: flex;
           justify-content: center;
-          margin: ${theme.spacing.s}px;
+          margin: ${theme.spacing.s};
         `}
       >
         <div
           css={css`
-            padding: ${theme.spacing.m}px ${theme.spacing.l}px;
+            padding: ${theme.spacing.m} ${theme.spacing.l};
             background-color: ${theme.colors.theme.background.variant0};
             border-radius: 8px;
             text-align: center;

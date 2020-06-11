@@ -5,6 +5,7 @@ import { ThemeColors, useTheme } from '../../../theming/themes';
 import { Layout } from '../../atoms/Layout';
 import { ThemeSwitch } from '../../atoms/ThemeSwitch';
 import { Typography } from '../../atoms/Typography';
+import { LinkBase } from '../../atoms/buttons/LinkBase';
 
 type HeaderProps = {
   color?: keyof ThemeColors['primary'];
@@ -25,49 +26,43 @@ export const Header: React.FC<HeaderProps> = ({
       <div
         css={css`
           display: flex;
+          align-items: center;
           justify-content: center;
-          position: relative;
         `}
       >
         <ul
           css={css`
             color: ${theme.colors.theme.primary[color]};
             display: flex;
-            margin: auto;
-
-            li:not(:last-child) {
-              margin-right: ${theme.spacing.m}px;
-            }
           `}
         >
           <li>
-            <a href="#bio">
+            <LinkBase href="#bio">
               <Typography variant="body1" color={color}>
-                Bio
+                #Bio
               </Typography>
-            </a>
+            </LinkBase>
           </li>
           <li>
-            <a href="#works">
+            <LinkBase href="#works">
               <Typography variant="body1" color={color}>
-                Works
+                #Works
               </Typography>
-            </a>
+            </LinkBase>
           </li>
           <li>
-            <a href="#contact">
+            <LinkBase href="#contact">
               <Typography variant="body1" color={color}>
-                Contact
+                #Contact
               </Typography>
-            </a>
+            </LinkBase>
           </li>
         </ul>
         <ThemeSwitch
+          color={color}
           onClick={onClickSwitchTheme}
           css={css`
             right: 0;
-            top: -2px;
-            position: absolute;
           `}
         ></ThemeSwitch>
       </div>

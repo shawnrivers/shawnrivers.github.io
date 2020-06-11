@@ -6,6 +6,7 @@ import { SP_EDGE } from '../../../libs/media';
 import { useTheme } from '../../../theming/themes';
 import { Layout } from '../../atoms/Layout';
 import { Typography } from '../../atoms/Typography';
+import { LinkBase } from '../../atoms/buttons/LinkBase';
 
 export const ContactSection: React.FC<React.HTMLAttributes<
   HTMLElement
@@ -26,10 +27,10 @@ export const ContactSection: React.FC<React.HTMLAttributes<
           color="standard"
           css={css`
             text-align: center;
-            margin-bottom: ${theme.spacing.m}px;
+            margin-bottom: ${theme.spacing.m};
           `}
         >
-          Contact
+          #Contact
         </Typography>
         <ul
           css={css`
@@ -37,24 +38,18 @@ export const ContactSection: React.FC<React.HTMLAttributes<
             flex-direction: row;
             align-items: center;
 
-            @media (max-width: ${SP_EDGE}px) {
+            @media (max-width: ${SP_EDGE}) {
               flex-direction: column;
             }
           `}
         >
           {contactsData.map(contactData => (
             <li key={contactData.name}>
-              <a
-                href={contactData.url}
-                css={css`
-                  display: block;
-                  padding: 20px ${theme.spacing.m}px;
-                `}
-              >
+              <LinkBase href={contactData.url} backgroundHoverColor="standard">
                 <Typography variant="body2" color="standard">
                   {contactData.name}
                 </Typography>
-              </a>
+              </LinkBase>
             </li>
           ))}
         </ul>

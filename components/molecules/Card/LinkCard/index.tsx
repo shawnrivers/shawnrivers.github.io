@@ -2,7 +2,11 @@
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { ThemeColors, useTheme } from '../../../../theming/themes';
+import {
+  ThemeColors,
+  useTheme,
+  ThemeSpacing,
+} from '../../../../theming/themes';
 import { CircleIcon } from '../../../atoms/CircleIcon';
 import { CircleImage } from '../../../atoms/CircleImage';
 import { ArrowIcon } from '../../../atoms/icons/ArrowIcon';
@@ -23,7 +27,7 @@ export type LinkCardProps = {
   body: string;
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
-  margin?: number;
+  margin?: keyof ThemeSpacing;
 };
 
 export const LinkCard: React.FC<LinkCardProps> = ({
@@ -34,23 +38,48 @@ export const LinkCard: React.FC<LinkCardProps> = ({
   body,
   color = 'standard',
   backgroundColor = 'standard',
-  margin = 0,
+  margin = 'none',
   ...restProps
 }) => {
   const theme = useTheme();
+  const marginValue = theme.spacing[margin];
 
   return (
-    <a href={to}>
+    <a
+      href={to}
+      css={css`
+        margin: 0;
+        box-shadow: none;
+
+        & div[data-hover-style] {
+          transition: box-shadow 0.25s ease-out;
+          box-shadow: none;
+        }
+
+        :hover {
+          & div[data-hover-style] {
+            box-shadow: 4px 4px 12px ${theme.colors.global.gray2};
+          }
+        }
+
+        &:focus,
+        &:active {
+          outline: auto;
+        }
+      `}
+    >
       <div
+        data-hover-style
         css={css`
           background-color: ${theme.colors.theme.background[backgroundColor]};
           display: flex;
           flex-direction: column;
           align-items: center;
           position: relative;
-          margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
-          max-width: ${CARD_MAX_WIDTH}px;
-          min-width: ${CARD_MIN_WIDTH}px;
+          margin: calc(${marginValue} + ${headingIconYOffset}px) ${marginValue}
+            ${marginValue};
+          max-width: ${CARD_MAX_WIDTH};
+          min-width: ${CARD_MIN_WIDTH};
           border-radius: 8px;
           height: auto;
         `}
@@ -69,7 +98,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
             css={css`
               background-color: ${theme.colors.theme.primary[color]};
               border: 4px solid ${theme.colors.theme.primary[color]};
-              margin: -${headingIconYOffset}px 0 ${theme.spacing.s}px;
+              margin: -${headingIconYOffset}px 0 ${theme.spacing.s};
             `}
           />
           {badgeIcon ? (
@@ -89,14 +118,14 @@ export const LinkCard: React.FC<LinkCardProps> = ({
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 ${theme.spacing.m}px ${theme.spacing.m}px;
+            padding: 0 ${theme.spacing.m} ${theme.spacing.m};
           `}
         >
           <Typography
             variant="h4"
             color={color}
             css={css`
-              margin-bottom: ${theme.spacing.s}px;
+              margin-bottom: ${theme.spacing.s};
               text-transform: uppercase;
             `}
           >
@@ -107,10 +136,12 @@ export const LinkCard: React.FC<LinkCardProps> = ({
           </Typography>
         </article>
         <div
+          data-hover-style
           css={css`
             position: absolute;
             bottom: -18px;
             right: -16px;
+            border-radius: 50%;
           `}
         >
           <CircleIcon

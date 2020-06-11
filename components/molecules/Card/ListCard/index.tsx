@@ -2,7 +2,11 @@
 import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 import { CARD_MAX_WIDTH, CARD_MIN_WIDTH } from '../../../../libs/media';
-import { ThemeColors, useTheme } from '../../../../theming/themes';
+import {
+  ThemeColors,
+  useTheme,
+  ThemeSpacing,
+} from '../../../../theming/themes';
 import { SvgIconComponent } from '../../../atoms/icons/types';
 import { Typography } from '../../../atoms/Typography';
 
@@ -31,7 +35,7 @@ const RoundDot: React.FC<{
         position: absolute;
         background-color: ${isActive
           ? theme.colors.global.red0
-          : theme.colors.global.grey2};
+          : theme.colors.global.gray2};
       `}
       {...restProps}
     ></div>
@@ -44,7 +48,7 @@ export type ListCardProps = {
   listItems: { component: React.ReactNode; isActive?: boolean }[];
   color?: keyof ThemeColors['primary'];
   backgroundColor?: keyof ThemeColors['background'];
-  margin?: number;
+  margin?: keyof ThemeSpacing;
 };
 
 export const ListCard: React.FC<ListCardProps> = ({
@@ -53,11 +57,11 @@ export const ListCard: React.FC<ListCardProps> = ({
   listItems,
   color = 'standard',
   backgroundColor = 'standard',
-  margin = 0,
+  margin = 'none',
   ...restProps
 }) => {
   const theme = useTheme();
-
+  const marginValue = theme.spacing[margin];
   const HeadingIcon = headingIcon;
 
   return (
@@ -67,9 +71,10 @@ export const ListCard: React.FC<ListCardProps> = ({
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: ${margin + headingIconYOffset}px ${margin}px ${margin}px;
-        max-width: ${CARD_MAX_WIDTH}px;
-        min-width: ${CARD_MIN_WIDTH}px;
+        margin: calc(${marginValue} + ${headingIconYOffset}px) ${marginValue}
+          ${marginValue};
+        max-width: ${CARD_MAX_WIDTH};
+        min-width: ${CARD_MIN_WIDTH};
         border-radius: 8px;
         height: 100%;
       `}
@@ -81,7 +86,7 @@ export const ListCard: React.FC<ListCardProps> = ({
         height={iconSize}
         title={heading}
         css={css`
-          margin: -${headingIconYOffset}px 0 ${theme.spacing.xxs}px;
+          margin: -${headingIconYOffset}px 0 ${theme.spacing.xxs};
         `}
       />
       <article
@@ -89,14 +94,14 @@ export const ListCard: React.FC<ListCardProps> = ({
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 0 ${theme.spacing.m}px ${theme.spacing.m}px;
+          padding: 0 ${theme.spacing.m} ${theme.spacing.m};
         `}
       >
         <Typography
           variant="h4"
           color={color}
           css={css`
-            margin-bottom: ${theme.spacing.s}px;
+            margin-bottom: ${theme.spacing.s};
             text-transform: uppercase;
           `}
         >
@@ -111,8 +116,8 @@ export const ListCard: React.FC<ListCardProps> = ({
 
                 :not(:last-child) > .item-text {
                   border-left: ${listLineWidth}px solid
-                    ${theme.colors.global.grey4};
-                  padding-bottom: ${theme.spacing.m}px;
+                    ${theme.colors.global.gray4};
+                  padding-bottom: ${theme.spacing.m};
                 }
               `}
             >
@@ -122,7 +127,7 @@ export const ListCard: React.FC<ListCardProps> = ({
                 css={css`
                   border-left: ${listLineWidth}px solid
                     ${theme.colors.theme.background.standard};
-                  padding-left: ${theme.spacing.m}px;
+                  padding-left: ${theme.spacing.m};
                 `}
               >
                 <Typography variant="body2" color={color}>

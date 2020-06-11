@@ -24,11 +24,10 @@ export type BackgroundColor = keyof ThemeColors['background'];
 
 type TypographyStyles = {
   fontSize: string;
-  lineHeight: string;
   fontWeight: 'normal' | 'bold';
 };
 
-type Typography = {
+type ThemeTypography = {
   h1: TypographyStyles;
   h2: TypographyStyles;
   h3: TypographyStyles;
@@ -38,18 +37,19 @@ type Typography = {
   caption: TypographyStyles;
 };
 
-export type TypographyVariant = keyof Typography;
+export type TypographyVariant = keyof ThemeTypography;
 
 export type ThemeKey = 'light' | 'dark';
 
-type Spacing = {
-  xxs: number;
-  xs: number;
-  s: number;
-  m: number;
-  l: number;
-  xl: number;
-  xxl: number;
+export type ThemeSpacing = {
+  none: string;
+  xxs: string;
+  xs: string;
+  s: string;
+  m: string;
+  l: string;
+  xl: string;
+  xxl: string;
 };
 
 export type Theme = {
@@ -59,66 +59,60 @@ export type Theme = {
       [key in GlobalColor]: string;
     };
   };
-  typography: Typography;
-  spacing: Spacing;
+  typography: ThemeTypography;
+  spacing: ThemeSpacing;
   key: ThemeKey;
 };
 
-const typography: Typography = {
+const typography: ThemeTypography = {
   h1: {
-    fontSize: '48px',
-    lineHeight: '60px',
+    fontSize: '3rem',
     fontWeight: 'bold',
   },
   h2: {
-    fontSize: '36px',
-    lineHeight: '45px',
+    fontSize: '2rem',
     fontWeight: 'bold',
   },
   h3: {
-    fontSize: '24px',
-    lineHeight: '30px',
+    fontSize: '1.5rem',
     fontWeight: 'bold',
   },
   h4: {
-    fontSize: '20px',
-    lineHeight: '25px',
+    fontSize: '1.25rem',
     fontWeight: 'bold',
   },
   body1: {
-    fontSize: '16px',
-    lineHeight: '20px',
+    fontSize: '1rem',
     fontWeight: 'normal',
   },
   body2: {
-    fontSize: '14px',
-    lineHeight: '18px',
+    fontSize: '0.9rem',
     fontWeight: 'normal',
   },
   caption: {
-    fontSize: '12px',
-    lineHeight: '15px',
+    fontSize: '0.75rem',
     fontWeight: 'normal',
   },
 };
 
-export const spacing: Spacing = {
-  xxs: 4,
-  xs: 8,
-  s: 16,
-  m: 24,
-  l: 32,
-  xl: 40,
-  xxl: 56,
+export const spacing: ThemeSpacing = {
+  none: '0rem',
+  xxs: '0.25rem',
+  xs: '0.5rem',
+  s: '1rem',
+  m: '1.5rem',
+  l: '2rem',
+  xl: '3rem',
+  xxl: '4rem',
 };
 
 const {
-  grey0,
-  grey1,
-  grey2,
-  grey3,
-  grey4,
-  grey5,
+  gray0,
+  gray1,
+  gray2,
+  gray3,
+  gray4,
+  gray5,
   white,
   red0,
   red1,
@@ -134,10 +128,10 @@ const lightTheme: Theme = {
   colors: {
     theme: {
       primary: {
-        standard: grey0,
-        variant0: grey1,
-        variant1: grey2,
-        variant2: grey3,
+        standard: gray0,
+        variant0: gray1,
+        variant1: gray2,
+        variant2: gray3,
         inverse: white,
       },
       secondary: {
@@ -146,8 +140,8 @@ const lightTheme: Theme = {
       },
       background: {
         standard: white,
-        variant0: grey5,
-        inverse: grey0,
+        variant0: gray5,
+        inverse: gray0,
       },
     },
     global: globalColors,
@@ -161,18 +155,18 @@ const darkTheme: Theme = {
     theme: {
       primary: {
         standard: white,
-        variant0: grey5,
-        variant1: grey4,
-        variant2: grey2,
-        inverse: grey0,
+        variant0: gray5,
+        variant1: gray4,
+        variant2: gray2,
+        inverse: gray0,
       },
       secondary: {
         standard: red0,
         variant0: red1,
       },
       background: {
-        standard: grey0,
-        variant0: grey1,
+        standard: gray0,
+        variant0: gray1,
         inverse: white,
       },
     },

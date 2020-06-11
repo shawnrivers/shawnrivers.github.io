@@ -43,7 +43,7 @@ export const All: React.FC = () => {
   const iconColor = select(
     'Icon Color',
     colorTheme.colors.global,
-    colorTheme.colors.global.grey0
+    colorTheme.colors.global.gray0
   );
 
   return (
@@ -59,7 +59,7 @@ export const All: React.FC = () => {
             display: flex;
             align-items: center;
             margin-bottom: 12px;
-            color: ${colorTheme.colors.global.grey0};
+            color: ${colorTheme.colors.global.gray0};
           `}
         >
           <Icon

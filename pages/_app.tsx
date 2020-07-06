@@ -22,10 +22,13 @@ const App = (props: AppProps) => {
 
   const theme = React.useMemo(() => themes[themeKey], [themeKey]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
       '(prefers-color-scheme: dark)'
     );
+    function handleDarkModeQueryChange(event: MediaQueryListEvent) {
+      setThemeKey(event.matches ? 'dark' : 'light');
+    }
 
     if (darkModeMediaQuery.media === 'not all') {
       setThemeKey('light');
@@ -36,9 +39,11 @@ const App = (props: AppProps) => {
         setThemeKey('light');
       }
 
-      darkModeMediaQuery.addListener(event => {
-        setThemeKey(event.matches ? 'dark' : 'light');
-      });
+      darkModeMediaQuery.addListener(handleDarkModeQueryChange);
+
+      return () => {
+        darkModeMediaQuery.removeListener(handleDarkModeQueryChange);
+      };
     }
   }, []);
 

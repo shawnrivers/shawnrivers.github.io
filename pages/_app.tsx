@@ -15,14 +15,14 @@ const {
 } = getConfig();
 
 const App = (props: AppProps) => {
-  const [themeKey, setThemeKey] = React.useState<ThemeKey>('light');
+  const [themeKey, setThemeKey] = React.useState<ThemeKey>('dark');
   const handleSwitchTheme = React.useCallback(() => {
     setThemeKey(themeKey === 'light' ? 'dark' : 'light');
   }, [themeKey]);
 
   const theme = React.useMemo(() => themes[themeKey], [themeKey]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
       '(prefers-color-scheme: dark)'
     );

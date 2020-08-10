@@ -39,10 +39,13 @@ const App = (props: AppProps) => {
         setThemeKey('light');
       }
 
-      darkModeMediaQuery.addListener(handleDarkModeQueryChange);
+      darkModeMediaQuery.addEventListener('change', handleDarkModeQueryChange);
 
       return () => {
-        darkModeMediaQuery.removeListener(handleDarkModeQueryChange);
+        darkModeMediaQuery.removeEventListener(
+          'change',
+          handleDarkModeQueryChange
+        );
       };
     }
   }, []);

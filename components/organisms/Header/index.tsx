@@ -5,6 +5,7 @@ import { ThemeColors, useTheme } from '../../../theming/themes';
 import { Layout } from '../../atoms/Layout';
 import { ThemeSwitch } from '../../atoms/ThemeSwitch';
 import { Typography } from '../../atoms/Typography';
+import { AnchorBase } from '../../atoms/buttons/AnchorBase';
 import { LinkBase } from '../../atoms/buttons/LinkBase';
 
 type HeaderProps = {
@@ -37,21 +38,21 @@ export const Header: React.FC<HeaderProps> = ({
           `}
         >
           <li>
-            <LinkBase href="#bio">
+            <LinkBase href="/#bio">
               <Typography variant="body1" color={color}>
                 #Bio
               </Typography>
             </LinkBase>
           </li>
           <li>
-            <LinkBase href="#works">
+            <LinkBase href="/#works">
               <Typography variant="body1" color={color}>
                 #Works
               </Typography>
             </LinkBase>
           </li>
           <li>
-            <LinkBase href="#contact">
+            <LinkBase href="/#contact">
               <Typography variant="body1" color={color}>
                 #Contact
               </Typography>

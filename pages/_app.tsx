@@ -144,6 +144,9 @@ const App = (props: AppProps) => {
         />
         <div
           css={css`
+            display: grid;
+            grid-template-rows: max-content 1fr max-content;
+            min-height: 100vh;
             background-color: ${theme.colors.theme.background.standard};
           `}
         >
@@ -152,7 +155,9 @@ const App = (props: AppProps) => {
             backgroundColor="standard"
             onClickSwitchTheme={handleSwitchTheme}
           />
-          <props.Component {...props.pageProps} />
+          <main>
+            <props.Component {...props.pageProps} />
+          </main>
           <Footer color="standard" backgroundColor="standard">
             {copyright}
           </Footer>

@@ -39,14 +39,25 @@ const App = (props: AppProps) => {
         setThemeKey('light');
       }
 
-      darkModeMediaQuery.addEventListener('change', handleDarkModeQueryChange);
-
-      return () => {
-        darkModeMediaQuery.removeEventListener(
+      if (typeof darkModeMediaQuery.addEventListener === 'function') {
+        darkModeMediaQuery.addEventListener(
           'change',
           handleDarkModeQueryChange
         );
-      };
+
+        return () => {
+          darkModeMediaQuery.removeEventListener(
+            'change',
+            handleDarkModeQueryChange
+          );
+        };
+      } else {
+        darkModeMediaQuery.addListener(handleDarkModeQueryChange);
+
+        return () => {
+          darkModeMediaQuery.removeListener(handleDarkModeQueryChange);
+        };
+      }
     }
   }, []);
 

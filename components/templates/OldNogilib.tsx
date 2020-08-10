@@ -1,11 +1,10 @@
 /**@jsx jsx */
 import { jsx, css } from '@emotion/core';
 import * as React from 'react';
-import { NextPage } from 'next';
-import { Typography } from '../components/atoms/Typography';
-import { AnchorBase } from '../components/atoms/buttons/AnchorBase';
+import { Typography } from '../atoms/Typography';
+import { AnchorBase } from '../atoms/buttons/AnchorBase';
 
-const OldNogilibPage: NextPage = () => {
+export const OldNogilib: React.FC = () => {
   return (
     <div
       css={css`
@@ -41,5 +40,3 @@ const OldNogilibPage: NextPage = () => {
     </div>
   );
 };
-
-export default OldNogilibPage;

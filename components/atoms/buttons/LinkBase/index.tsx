@@ -21,7 +21,7 @@ export const LinkBase: React.FC<LinkBaseProps> = props => {
     <Link {...linkProps}>
       <a
         css={css`
-          display: inherit;
+          display: inline-block;
           padding: ${theme.spacing.xs} ${theme.spacing.s};
           border-radius: 8px;
           transition: background-color 0.3s ease-out;

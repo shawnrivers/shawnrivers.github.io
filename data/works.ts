@@ -14,8 +14,8 @@ type LinkCardData = {
 };
 
 const nogizakaLib: LinkCardData = {
-  url: 'https://shawnrivers.github.io/nogizaka-lib-redesign/cds/singles/',
-  heading: 'Nogizaka Lib',
+  url: 'https://shawnrivers.github.io/nogilib/discography',
+  heading: 'NOGILIB',
   body:
     'A web application showing the information about Nogizaka46 in a user-friendly way',
   headingIcon: {

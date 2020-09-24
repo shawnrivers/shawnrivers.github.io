@@ -30,6 +30,7 @@ export const LinkBase: React.FC<LinkBaseProps> = props => {
 
           &:hover {
             background-color: ${backgroundColors[backgroundHoverColor]};
+            cursor: pointer;
           }
 
           &:focus {

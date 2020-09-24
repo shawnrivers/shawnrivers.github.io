@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core';
 import { radios, withKnobs } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { ThemeDecorator } from '../../../.storybook/libs/ThemeDecorator';
+import { ThemeDecorator } from '../../../../.storybook/libs/ThemeDecorator';
 import { themes } from '../../../theming/themes';
 import { Typography } from '.';
 

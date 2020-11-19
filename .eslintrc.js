@@ -29,6 +29,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'no-console': 'error',
     'import/order': 'error',
+    'jsx-a11y/anchor-is-valid': 'off',
   },
   settings: {
     react: {

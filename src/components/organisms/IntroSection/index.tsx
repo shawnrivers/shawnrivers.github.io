@@ -11,7 +11,7 @@ import { Typography } from '../../atoms/Typography';
 import profile1x from '../../images/profile-1x.jpg';
 import profile2x from '../../images/profile-2x.jpg';
 import profile3x from '../../images/profile-3x.jpg';
-import { LinkBase } from '../../atoms/buttons/LinkBase';
+import { AnchorBase } from '../../atoms/buttons/AnchorBase';
 
 export const IntroSection: React.FC<React.HTMLAttributes<
   HTMLElement
@@ -83,7 +83,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
           >
             Usho Ka (JA)
           </Typography>
-          <LinkBase href="https://twitter.com/yuxiao_he">
+          <AnchorBase href="https://twitter.com/yuxiao_he">
             <div
               css={css`
                 display: flex;
@@ -101,7 +101,7 @@ export const IntroSection: React.FC<React.HTMLAttributes<
                 @yuxiao_he
               </Typography>
             </div>
-          </LinkBase>
+          </AnchorBase>
         </div>
       </div>
       <div

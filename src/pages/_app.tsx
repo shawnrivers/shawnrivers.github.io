@@ -15,7 +15,7 @@ const {
 } = getConfig();
 
 const App = (props: AppProps) => {
-  const [themeKey, setThemeKey] = React.useState<ThemeKey>('light');
+  const [themeKey, setThemeKey] = React.useState<ThemeKey>('dark');
   const handleSwitchTheme = React.useCallback(() => {
     setThemeKey(themeKey === 'light' ? 'dark' : 'light');
   }, [themeKey]);
@@ -26,6 +26,9 @@ const App = (props: AppProps) => {
     const darkModeMediaQuery = window.matchMedia(
       '(prefers-color-scheme: dark)'
     );
+    function handleDarkModeQueryChange(event: MediaQueryListEvent) {
+      setThemeKey(event.matches ? 'dark' : 'light');
+    }
 
     if (darkModeMediaQuery.media === 'not all') {
       setThemeKey('light');
@@ -36,9 +39,25 @@ const App = (props: AppProps) => {
         setThemeKey('light');
       }
 
-      darkModeMediaQuery.addListener(event => {
-        setThemeKey(event.matches ? 'dark' : 'light');
-      });
+      if (typeof darkModeMediaQuery.addEventListener === 'function') {
+        darkModeMediaQuery.addEventListener(
+          'change',
+          handleDarkModeQueryChange
+        );
+
+        return () => {
+          darkModeMediaQuery.removeEventListener(
+            'change',
+            handleDarkModeQueryChange
+          );
+        };
+      } else {
+        darkModeMediaQuery.addListener(handleDarkModeQueryChange);
+
+        return () => {
+          darkModeMediaQuery.removeListener(handleDarkModeQueryChange);
+        };
+      }
     }
   }, []);
 
@@ -125,6 +144,9 @@ const App = (props: AppProps) => {
         />
         <div
           css={css`
+            display: grid;
+            grid-template-rows: max-content 1fr max-content;
+            min-height: 100vh;
             background-color: ${theme.colors.theme.background.standard};
           `}
         >
@@ -133,7 +155,9 @@ const App = (props: AppProps) => {
             backgroundColor="standard"
             onClickSwitchTheme={handleSwitchTheme}
           />
-          <props.Component {...props.pageProps} />
+          <main>
+            <props.Component {...props.pageProps} />
+          </main>
           <Footer color="standard" backgroundColor="standard">
             {copyright}
           </Footer>

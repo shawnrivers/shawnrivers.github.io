@@ -14,10 +14,10 @@ export const CircleImage: React.FC<CircleImageProps> = props => {
         src={src}
         srcSet={srcSet}
         alt={alt}
+        width={width}
+        height={width}
         css={css`
           border-radius: 50%;
-          width: ${width}px;
-          height: ${width}px;
         `}
         {...restProps}
       />

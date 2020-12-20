@@ -39,7 +39,7 @@ export const OldNogilib: React.FC = () => {
             text-align: center;
           `}
         >
-          (Nogizaka Lib)
+          (old name: &quot;Nogizaka Lib&quot;)
         </Typography>
         <Typography
           variant="h3"
@@ -50,8 +50,12 @@ export const OldNogilib: React.FC = () => {
           `}
         >
           This project has been moved to
-          <AnchorBase href="https://shawnrivers.github.io/nogilib/discography">
-            here
+          <AnchorBase
+            href="https://nogilib.com/discography"
+            target="_blank"
+            rel="noopener"
+          >
+            nogilib.com
           </AnchorBase>
         </Typography>
       </div>

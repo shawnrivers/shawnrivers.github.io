@@ -7,6 +7,14 @@
   <a href="https://shawnrivers.github.io/">Yuxiao He Home Page</a>
 </h1>
 
+## ⚠️ IMPORTANT ⚠️
+
+This project has been deprecated and replaced by my [new home page](https://github.com/shawnrivers/blog).
+
+Please check it in https://github.com/shawnrivers/blog.
+
+---
+
 This is a Next.js powered personal home page.
 
 ## Technologies
